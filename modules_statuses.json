@@ -1,4 +1,5 @@
 {
     "Roles": true,
-    "Dashboard": true
+    "Dashboard": true,
+    "MasterData": true
 }

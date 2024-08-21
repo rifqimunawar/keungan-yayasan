@@ -56,6 +56,9 @@ class Backup extends Command
       'roles' => [
         'roles',
       ],
+      'siswas' => [
+        'siswas',
+      ],
 
     ];
     if ($opt_users == 1 || $arg_type == 'users')
