@@ -10,9 +10,14 @@
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
 
+    {{-- select2 --}}
+    <link rel="stylesheet" href="{{ asset('assets/modules/select2/dist/css/select2.min.css') }}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     @stack('css')
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -37,18 +42,18 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="{{ route('dashboard.index') }}">Stisla</a>
+                        <a href="{{ route('dashboard.index') }}">Yayasan Armaniyah</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="{{ route('dashboard.index') }}">St</a>
+                        <a href="{{ route('dashboard.index') }}">YA</a>
                     </div>
                     @include('partials.sidebar')
 
-                    <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+                    {{-- <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                         <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
                             <i class="fas fa-rocket"></i> Documentation
                         </a>
-                    </div>
+                    </div> --}}
                 </aside>
             </div>
 
@@ -73,6 +78,8 @@
     <!-- Template JS File -->
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+    <!-- select2 -->
+    <script src="{{ asset('assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
     <!-- Sweet Alert -->
     @include('sweetalert::alert')
     @stack('scripts')

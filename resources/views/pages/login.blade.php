@@ -30,13 +30,47 @@
         gtag('config', 'UA-94034622-3');
     </script>
     <!-- /END GA -->
+    <style>
+        .row {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+            /* Pastikan tidak ada margin yang mengganggu */
+            padding: 0;
+            /* Pastikan tidak ada padding yang mengganggu */
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+            border: none;
+            /* Pastikan border tidak mengganggu */
+            object-fit: cover;
+            /* Ini untuk mengisi ruang dengan baik */
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
         <section class="section">
-            <div class="container mt-3">
-                <div class="row">
+            <div class="">
+                <div class="row" style="height: 100vh; overflow: hidden; position: relative;">
+                    <!-- Video Background -->
+                    <video autoplay muted loop
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; object-fit: cover;">
+                        <source src="{{ asset('assets/bg-login.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+
                     <div
                         class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="login-brand">
@@ -53,11 +87,11 @@
                                 <form method="POST" action="/authenticate" class="needs-validation" novalidate="">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email"
+                                        <label for="username">Username</label>
+                                        <input id="username" type="text" class="form-control" name="username"
                                             tabindex="1" required autofocus>
                                         <div class="invalid-feedback">
-                                            Please fill in your email
+                                            Please fill in your username
                                         </div>
                                     </div>
 
@@ -66,7 +100,7 @@
                                             <label for="password" class="control-label">Password</label>
                                             <div class="float-right">
                                                 <a href="#" class="text-small">
-                                                    Forgot Password?
+
                                                 </a>
                                             </div>
                                         </div>
@@ -76,15 +110,6 @@
                                             please fill in your password
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" name="remember" class="custom-control-input"
-                                                tabindex="3" id="remember-me">
-                                            <label class="custom-control-label" for="remember-me">Remember Me</label>
-                                        </div>
-                                    </div>
-
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                                             Login
@@ -93,9 +118,6 @@
                                 </form>
 
                             </div>
-                        </div>
-                        <div class="simple-footer">
-                            Copyright &copy; Stisla 2018
                         </div>
                     </div>
                 </div>

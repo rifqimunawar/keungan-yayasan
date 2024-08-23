@@ -48,7 +48,7 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('user.edit', $item->id) }}">
-                                                        <i class="fa fa-pencil-alt ml-2"></i>
+                                                        <i class="fa fa-pencil-square-o ml-2"></i>
                                                     </a>
                                                     <a href="{{ route('user.destroy', $item->id) }}"
                                                         data-confirm-delete="true">

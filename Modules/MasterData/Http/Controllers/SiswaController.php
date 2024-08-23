@@ -2,10 +2,14 @@
 
 namespace Modules\MasterData\Http\Controllers;
 
+use App\Imports\SiswaImport;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Modules\MasterData\Entities\Siswa;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
+use Modules\MasterData\Entities\TahunMasuk;
 use Illuminate\Contracts\Support\Renderable;
 
 class SiswaController extends Controller
@@ -17,7 +21,7 @@ class SiswaController extends Controller
   public function index()
   {
     $title = 'Data Siswa';
-    $data = Siswa::latest()->get();
+    $data = Siswa::with('tahunMasuk')->get();
 
     $alert = 'Delete Data!';
     $text = "Are you sure you want to delete?";
@@ -33,7 +37,9 @@ class SiswaController extends Controller
   public function create()
   {
     $title = "Siswa Baru";
-    return view('masterdata::siswa.create', ['title' => $title]);
+    $data = TahunMasuk::latest()->get();
+
+    return view('masterdata::siswa.create', ['data' => $data, 'title' => $title]);
   }
 
   /**
@@ -43,12 +49,35 @@ class SiswaController extends Controller
    */
   public function store(Request $request)
   {
-    $data = $request->all();
-    $newData = Siswa::create($data);
+    // Validasi input
+    $validator = Validator::make($request->all(), [
+      // 'name' => 'required|string|max:255',
+      // 'nisn' => 'required|numeric|digits:8',
+      'tahun_masuk_id' => 'required|exists:tahun_masuks,id',
+    ], [
+      'name.required' => 'Nama wajib diisi.',
+      'nisn.required' => 'NISN wajib diisi.',
+      'nisn.numeric' => 'NISN harus berupa angka.',
+      'nisn.digits' => 'NISN harus terdiri dari 8 digit.',
+      'tahun_masuk_id.required' => 'Tahun Masuk wajib dipilih.',
+      'tahun_masuk_id.exists' => 'Tahun Masuk yang dipilih tidak valid.',
+    ]);
 
+    // Jika validasi gagal, kembalikan ke halaman sebelumnya dengan error
+    if ($validator->fails()) {
+      return redirect()->back()
+        ->withErrors($validator)
+        ->withInput();
+    }
+
+    // Simpan data ke database
+    $newData = Siswa::create($request->all());
+
+    // Tampilkan pesan sukses
     Alert::success('Success', 'Data berhasil disimpan');
     return redirect()->route('siswa.index');
   }
+
 
   /**
    * Show the specified resource.
@@ -69,7 +98,8 @@ class SiswaController extends Controller
   {
     $title = "Update SIswa";
     $data = Siswa::findOrFail($id);
-    return view('masterdata::siswa.edit', ['data' => $data, 'title' => $title]);
+    $tahun_masuk = TahunMasuk::latest()->get();
+    return view('masterdata::siswa.edit', ['tahun_masuk' => $tahun_masuk, 'data' => $data, 'title' => $title]);
   }
 
   /**
@@ -103,4 +133,36 @@ class SiswaController extends Controller
     Alert::success('Success', 'Data berhasil dihapus');
     return redirect()->route('siswa.index');
   }
+
+  public function createImport()
+  {
+    $title = 'Data Siswa';
+    return view('masterdata::siswa.create-import', ['title' => $title]);
+  }
+
+  public function import(Request $request)
+  {
+    // Validasi file yang diupload
+    $validator = Validator::make($request->all(), [
+      'file' => 'required|mimes:xlsx,csv,xls',
+    ]);
+
+    // Jika validasi gagal, kembalikan dengan error
+    if ($validator->fails()) {
+      return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    // Jika validasi sukses, lanjutkan dengan proses import
+    // Misalnya, menggunakan SiswaImport untuk mengimpor data
+    try {
+      Excel::import(new SiswaImport, $request->file('file'));
+      Alert::success('Success', 'Data berhasil diimpor');
+    } catch (\Exception $e) {
+      Alert::error('Oops...', 'Terjadi kesalahan saat mengimport data, mohon perbaiki data');
+      return redirect()->route('siswa.index');
+    }
+
+    return redirect()->route('siswa.index');
+  }
+
 }

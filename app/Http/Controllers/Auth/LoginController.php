@@ -22,7 +22,7 @@ class LoginController extends Controller
 
   public function authenticate(Request $request)
   {
-    $credentials = $request->only('email', 'password');
+    $credentials = $request->only('username', 'password');
 
     if (Auth::attempt($credentials)) {
       // Authentication passed...
@@ -30,7 +30,7 @@ class LoginController extends Controller
       return redirect()->intended('/dashboard');
     } else {
       // Authentication failed...
-      Alert::error('Error', 'Email atau password salah!!!');
+      Alert::error('Error', 'Username atau password salah!!!');
       return redirect()->route('login');
     }
   }

@@ -1,5 +1,6 @@
 {
     "Roles": true,
     "Dashboard": true,
-    "MasterData": true
+    "MasterData": true,
+    "Pembayaran": true
 }

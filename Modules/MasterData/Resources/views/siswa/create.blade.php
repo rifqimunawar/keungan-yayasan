@@ -21,14 +21,32 @@
                         <div class="card-body">
                             <form action="{{ route('siswa.store') }}" method="post">
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-group col-lg-6">
                                     <label>Nama Siswa</label>
-                                    <input type="text" name="name" required class="form-control col-lg-6">
+                                    <input type="text" name="name" required class="form-control ">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-lg-6">
                                     <label>NISN</label>
-                                    <input type="number" name="nisn" required class="form-control col-lg-6">
+                                    <input type="number" name="nisn" required class="form-control ">
                                 </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Tahun Masuk</label>
+                                    <select name="tahun_masuk_id" class="form-control select2">
+                                        <option selected disabled>-- pilih --</option>
+                                        @foreach ($data as $item)
+                                            <option value="{{ $item->id }}">{{ $item->tahun }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger pt-3 col-lg-6" role="alert">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <div class="d-flex justify-content-center col-lg-6">
                                     <a href="{{ route('siswa.index') }}" class="btn btn-warning mr-2">Kembali</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>

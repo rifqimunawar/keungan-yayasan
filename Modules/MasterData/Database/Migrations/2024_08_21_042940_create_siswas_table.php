@@ -15,11 +15,15 @@ return new class extends Migration {
     Schema::create('siswas', function (Blueprint $table) {
       $table->id();
       $table->string('name');
-      $table->integer('nisn');
+      $table->unsignedBigInteger('nisn');
+      $table->unsignedBigInteger('tahun_masuk_id')->default(1);
       $table->softDeletes();
       $table->timestamps();
+
+      $table->foreign('tahun_masuk_id')->references('id')->on('tahun_masuks')->onDelete('cascade');
     });
   }
+
 
   /**
    * Reverse the migrations.

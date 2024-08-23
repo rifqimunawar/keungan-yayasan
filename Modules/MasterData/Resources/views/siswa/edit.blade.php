@@ -31,6 +31,18 @@
                                     <input type="number" value="{{ $data->nisn }}" name="nisn" required
                                         class="form-control col-lg-6">
                                 </div>
+                                <div class="form-group ">
+                                    <label>Tahun Masuk</label>
+                                    <select name="tahun_masuk_id" class="form-control select2 col-lg-6">
+                                        <option selected disabled>-- pilih --</option>
+                                        @foreach ($tahun_masuk as $item)
+                                            <option value="{{ $item->id }}"
+                                                {{ $data->tahun_masuk_id == $item->id ? 'selected' : '' }}>
+                                                {{ $item->tahun }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="d-flex justify-content-center col-lg-6">
                                     <a href="{{ route('siswa.index') }}" class="btn btn-warning mr-2">Kembali</a>
                                     <button type="submit" class="btn btn-primary">Simpan</button>

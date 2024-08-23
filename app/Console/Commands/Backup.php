@@ -59,6 +59,15 @@ class Backup extends Command
       'siswas' => [
         'siswas',
       ],
+      'tahun_masuks' => [
+        'tahun_masuks',
+      ],
+      'tagihans' => [
+        'tagihans',
+      ],
+      'siswa_tagihan' => [
+        'siswa_tagihan',
+      ],
 
     ];
     if ($opt_users == 1 || $arg_type == 'users')

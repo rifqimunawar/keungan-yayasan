@@ -46,7 +46,7 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('roles.edit', $item->id) }}">
-                                                        <i class="fa fa-pencil-alt ml-2"></i>
+                                                        <i class="fa fa-pencil-square-o ml-2"></i>
                                                     </a>
                                                     <a href="{{ route('roles.destroy', $item->id) }}"
                                                         data-confirm-delete="true">

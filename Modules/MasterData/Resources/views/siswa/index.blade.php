@@ -19,6 +19,14 @@
                             <h4>Table {{ $title }}</h4>
                             <a href="{{ route('siswa.create') }}" class="ml-2 btn btn-primary"> Tambah <ion-icon
                                     name="add-circle-outline"></ion-icon><i class="ml-2 fa fa-plus"></i></a>
+                            <a href="{{ route('siswa.export') }}" class="ml-2 btn btn-success">
+                                <ion-icon name="document-export-outline mx-2"></ion-icon>
+                                <i class="fa fa-file-excel-o"></i> Export Excel
+                            </a>
+                            <a href="{{ route('siswa.createImport') }}" class="ml-2 btn btn-info">
+                                <ion-icon name="document-export-outline mx-2"></ion-icon>
+                                <i class="fa fa-file-excel-o"></i> Import Excel
+                            </a>
 
                         </div>
                         <div class="card-body">
@@ -30,6 +38,7 @@
                                                 #
                                             </th>
                                             <th>Nama Siswa</th>
+                                            <th>Tahun Masuk</th>
                                             <th>NISN</th>
                                             <th>Action</th>
                                         </tr>
@@ -38,15 +47,16 @@
                                         @foreach ($data as $item)
                                             <tr>
                                                 <td>
-                                                    {{ $item->id }}
+                                                    {{ $loop->iteration }}
                                                 </td>
                                                 <td>{{ $item->name }}</td>
+                                                <td>{{ $item->tahunMasuk->tahun }}</td>
                                                 <td>
                                                     {{ $item->nisn }}
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('siswa.edit', $item->id) }}">
-                                                        <i class="fa fa-pencil-alt ml-2"></i>
+                                                        <i class="fa fa-pencil-square-o ml-2"></i>
                                                     </a>
                                                     <a href="{{ route('siswa.destroy', $item->id) }}"
                                                         data-confirm-delete="true">

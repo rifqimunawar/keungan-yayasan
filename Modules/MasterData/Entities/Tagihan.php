@@ -3,16 +3,16 @@
 namespace Modules\MasterData\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tagihan extends Model
 {
-    use HasFactory;
+  use SoftDeletes;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
-    {
-        return \Modules\MasterData\Database\factories\TagihanFactory::new();
-    }
+  protected $guarded = ([]);
+
+  public function siswas()
+  {
+    return $this->belongsToMany(Siswa::class, 'siswa_tagihan')->withTimestamps();
+  }
 }

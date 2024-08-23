@@ -50,6 +50,7 @@ class UserController extends Controller
     // Rule validasi untuk name dan password
     $rules = [
       'name' => 'required|unique:users,name',
+      'username' => 'required|unique:users,username|regex:/^[a-z0-9]+$/',
       'email' => 'required|unique:users,email',
       'password' => 'required|min:8',
       'role_id' => 'required',
@@ -58,6 +59,9 @@ class UserController extends Controller
     $messages = [
       'name.required' => 'Nama wajib diisi.',
       'name.unique' => 'Nama sudah digunakan.',
+      'username.required' => 'Username wajib diisi.',
+      'username.unique' => 'Username sudah digunakan.',
+      'username.regex' => 'Username hanya boleh menggunakan huruf kecil dan angka, tanpa spasi.',
       'email.required' => 'Email wajib diisi.',
       'email.unique' => 'Email sudah digunakan.',
       'password.required' => 'Password wajib diisi.',
