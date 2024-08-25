@@ -83,6 +83,10 @@
     <!-- Sweet Alert -->
     @include('sweetalert::alert')
     @stack('scripts')
+
+
+    <!-- modal -->
+    {{-- <script src="{{ asset('assets/js/page/bootstrap-modal.js') }}"></script> --}}
 </body>
 
 </html>

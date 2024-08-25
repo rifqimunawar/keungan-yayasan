@@ -18,7 +18,7 @@ class Siswa extends Model
   public function tagihans()
   {
     return $this->belongsToMany(Tagihan::class, 'siswa_tagihan')
-      ->withPivot('status', 'nominal_tagihan', 'nominal_tagihan_terbayar')
+      ->withPivot('id', 'status', 'nominal_tagihan', 'nominal_tagihan_terbayar')
       ->withTimestamps();
   }
 }

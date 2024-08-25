@@ -25,6 +25,12 @@ Route::middleware(['auth', 'roles:1'])->group(function () {
   Route::post('/pembayaran/{id}/update', 'PembayaranController@update')->name('pembayaran.update');
   Route::delete('/pembayaran/{id}', 'PembayaranController@destroy')->name('pembayaran.destroy');
 
-  Route::get('/tagihan/lunas/{siswaId}/{tagihanId}', 'PembayaranController@lunas');
+  Route::get('/pembayaran/{id}/{siswa_id}/make', 'PembayaranController@make')->name('pembayaran.make');
+  Route::post('/pembayaran/{id}/save', 'PembayaranController@savePembayaran')->name('pembayaran.save');
+  Route::get('/pembayaran/{id}/invoice', 'PembayaranController@invoice')->name('pembayaran.invoice');
+
+  // Route::get('/tagihan/lunas/{siswaId}/{tagihanId}', 'PembayaranController@lunas');
+
+  // Route::get('/tagihan/lunas/{siswaId}/{tagihanId}', 'PembayaranController@lunas');
 
 });

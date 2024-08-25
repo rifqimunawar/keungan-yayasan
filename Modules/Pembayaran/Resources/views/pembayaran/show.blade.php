@@ -63,19 +63,24 @@
                                                 </th>
                                                 <th>Nominal</th>
                                                 <th>Tagihan</th>
+                                                <th>Terbayar</th>
                                                 <th>Status</th>
                                                 <th class="text-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($siswa->tagihans as $item)
+                                                {{-- @dd($siswa->tagihans); --}}
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ Fungsi::rupiah($item->nominal) }}</td>
                                                     <td>{{ $item->name }}</td>
+                                                    <td>{{ Fungsi::rupiah($item->pivot->nominal_tagihan_terbayar) }}</td>
                                                     <td>
                                                         @if ($item->pivot->status == 1)
                                                             <span class="badge badge-success">Lunas</span>
+                                                            <a href="{{ route('pembayaran.invoice', $item->pivot->id) }}"
+                                                                id="btnPrint" class="badge badge-info">Invoice</a>
                                                         @else
                                                             <span class="badge badge-danger">Belum Lunas</span>
                                                         @endif
@@ -85,9 +90,12 @@
                                                         @if ($item->pivot->status == 1)
                                                             <button class="btn btn-success" disabled>Sudah Lunas</button>
                                                         @else
-                                                            <a href="/tagihan/lunas/{{ $item->id }}/{{ $siswa->id }}"
-                                                                class="btn btn-danger">Bayar Sekarang</a>
+                                                            <a href="{{ route('pembayaran.make', ['id' => $item->pivot->id, 'siswa_id' => $siswa->id]) }}"
+                                                                class="btn btn-danger">
+                                                                Bayar Sekarang
+                                                            </a>
                                                         @endif
+
                                                     </td>
 
                                                 </tr>
@@ -108,14 +116,27 @@
 @endsection
 <!-- script -->
 <script>
+    $(document).ready(function() {
+        // Inisialisasi tombol cetak
+        $('#btnPrint').printPage();
+
+        // Inisialisasi DatePicker dengan auto close
+        $("#datepicker-autoClose").datepicker({
+            todayHighlight: true,
+            autoclose: true
+        });
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         var rupiah = document.getElementById('rupiah');
 
-        rupiah.addEventListener('keyup', function(e) {
-            // Format nilai dengan prefix 'Rp. '
-            // rupiah.value = formatRupiah(this.value, 'Rp. ');
-            rupiah.value = formatRupiah(this.value, '');
-        });
+        // Menambahkan event listener untuk memformat input menjadi format rupiah
+        if (rupiah) { // Memastikan elemen dengan ID 'rupiah' ada
+            rupiah.addEventListener('keyup', function(e) {
+                // Format nilai dengan prefix 'Rp.' atau tanpa prefix sesuai kebutuhan
+                rupiah.value = formatRupiah(this.value, '');
+            });
+        }
 
         /**
          * Fungsi untuk format angka menjadi format ribuan dengan prefix
@@ -133,7 +154,7 @@
 
             // Tambahkan titik setiap 3 digit ribuan
             if (ribuan) {
-                separator = sisa ? '.' : '';
+                var separator = sisa ? '.' : '';
                 rupiah += separator + ribuan.join('.');
             }
 
@@ -143,11 +164,5 @@
             // Tambahkan prefix jika disediakan
             return prefix == undefined ? rupiah : (rupiah ? prefix + rupiah : '');
         }
-    });
-
-
-    $("#datepicker-autoClose").datepicker({
-        todayHighlight: true,
-        autoclose: true
     });
 </script>

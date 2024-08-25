@@ -86,6 +86,10 @@ class TagihanController extends Controller
   public function update(Request $request, $id)
   {
     $data = $request->all();
+    $data = $request->all();
+    if (isset($data['nominal'])) {
+      $data['nominal'] = preg_replace('/[^0-9]/', '', $data['nominal']);
+    }
     $updateData = Tagihan::findOrFail($id);
     $updateData->update($data);
     Alert::success('Success', 'Data berhasil diupdate');

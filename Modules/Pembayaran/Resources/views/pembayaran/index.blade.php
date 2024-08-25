@@ -51,8 +51,8 @@
                                                     <a href="{{ route('pembayaran.show', $item->id) }}"
                                                         class="btn btn-primary"
                                                         style="font-size: 10px; padding: 10px 20px;">
-                                                        <i class="fa fa-money" style="font-size: 10px;"> Bayar</i>
-                                                    </a>
+                                                        <i class="fa fa-money" style="font-size: 10px;"></i>
+                                                        Tagihan</a>
                                                 </td>
                                             </tr>
                                         @endforeach
