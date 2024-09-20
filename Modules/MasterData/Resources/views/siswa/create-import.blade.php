@@ -29,11 +29,38 @@
 
                                 </div>
 
+                                <div class="form-group mt-3 mb-3">
+                                    <label for="angkatan">Tahun Angkatan Masuk</label>
+                                    <select name="angkatan" class="form-control select2 ">
+                                        <option selected disabled>-- Pilih Angkatan --</option>
+                                        @foreach ($tahun as $item)
+                                            <option value="{{ $item->id }}">Siswa Tahun Masuk
+                                                {{ $item->tahun }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Kelas</label>
+                                    <select name="kelas_id" id="category_id_kelas_id" class="form-control select2">
+                                        <option selected disabled>-- pilih --</option>
+                                        @foreach ($data_category as $category)
+                                            <optgroup label="{{ $category->name }}">
+                                                @foreach ($category->kelas as $kelas)
+                                                    <option value="{{ $kelas->id }}">
+                                                        {{ $kelas->name }}</option>
+                                                @endforeach
+                                            </optgroup>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <p>Pastikan format file excel anda seperti contoh file
                                     <a href="{{ asset('assets/format-import-data-siswa.xlsx') }}" download>
                                         <strong>disini!</strong>
                                     </a>
                                 </p>
+
+
                                 @if ($errors->any())
                                     <div class="alert alert-danger pt-4 col-lg-6" role="alert">
                                         <p><strong>Error</strong></p>
@@ -47,6 +74,12 @@
                                 <a href="{{ route('siswa.index') }}" class="btn btn-warning mr-2">Kembali</a>
                                 <button type="submit" class="btn btn-primary">Import</button>
                             </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="my-4 mx-4">Posisi paling kiri nomor urut, nama, dan NISN</p>
+                        <div class="card-body col-lg-12">
+                            <img src="{{ asset('assets/img/contoh-import.png') }}" alt="">
                         </div>
                     </div>
                 </div>

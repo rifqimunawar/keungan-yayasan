@@ -15,11 +15,16 @@ return new class extends Migration {
     Schema::create('siswas', function (Blueprint $table) {
       $table->id();
       $table->string('name');
-      $table->unsignedBigInteger('nisn');
+      $table->unsignedBigInteger('nisn')->nullable();
+      $table->unsignedBigInteger('no_urut')->nullable();
       $table->unsignedBigInteger('tahun_masuk_id')->default(1);
+      $table->unsignedBigInteger('category_id')->default(1);
+      $table->unsignedBigInteger('kelas_id')->default(1);
       $table->softDeletes();
       $table->timestamps();
 
+      $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('cascade');
+      $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
       $table->foreign('tahun_masuk_id')->references('id')->on('tahun_masuks')->onDelete('cascade');
     });
   }

@@ -81,10 +81,9 @@
                     <table border="0" class="header" width="100%">
                         <tr>
                             <td class="table_td header_text" width="20%" align="center">
-                                <img alt="logo"
-                                    src="https://storage.nu.or.id/storage/post/1_1/mid/logo-baru-uninus-news18112023_1700288683.webp"
-                                    height="70" width="70">
-                                <p>nama lembaga<br />alamat</p>
+                                <img alt="logo" src="{{ asset('assets/img/logo-arman.png') }}" height="70"
+                                    width="70" style="margin-top: 20px">
+                                <p>YAYASAN ARMANIYAH </p>
                             </td>
                             <td class="table_td header_text" width="28%" align="center" colspan="2"
                                 style="font-weight: bold;vertical-align:middle">
@@ -94,25 +93,32 @@
                             </td>
                             <td class="table_td header_text" width="20%">
                                 <table border="0" class="table2" width="100%">
+                                    <tr style="padding-top: 10px">
+                                        <td style="color: transparent;">|||</td>
+                                        <td> </td>
+                                        <td> </td>
+                                    </tr>
                                     <tr>
                                         <td width="40%">No. Transaksi</td>
                                         <td width="1%">:</td>
-                                        <td width="60%">nomor</td>
+                                        <td width="60%">
+                                            {{ $data->id }}/{{ $data->siswa->id }}/{{ $data->siswa->tagihans->pluck('id')->implode(', ') }}/{{ \Carbon\Carbon::parse($data->tanggal_transaksi)->format('Y/m/d') }}
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Nama</td>
                                         <td>:</td>
-                                        <td>nama</td>
+                                        <td>{{ $data->siswa->name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Tgl lahir</td>
+                                        <td>Kategori</td>
                                         <td>:</td>
-                                        <td>tanggal lahir</td>
+                                        <td>{{ $data->siswa->category->name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Tahun Masuk</td>
                                         <td>:</td>
-                                        <td>Tahun masuk</td>
+                                        <td>{{ $data->siswa->tahunMasuk->tahun }}</td>
                                     </tr>
                                 </table>
                             </td>
@@ -125,9 +131,66 @@
                             <td style="width: 50%; text-align: center; vertical-align: top; padding: 2px;">
                                 <table style="width: 100%; border-collapse: collapse;">
                                     <tr>
-                                        <td style="width: 33.33%; padding: 2px;">Nadi</td>
-                                        <td style="width: 66.66%; padding: 2px;">
-                                            5 &emsp;x/menit
+                                        <td style="width: 15%; padding: 10px;">Nama</td>
+                                        <td style="width: 3%; padding: 10px;">:</td>
+                                        <td style="width: 80%; padding: 10px;">
+                                            {{ $data->siswa->name }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15%; padding: 10px;">Kategori</td>
+                                        <td style="width: 3%; padding: 10px;">:</td>
+                                        <td style="width: 80%; padding: 10px;">
+                                            {{ $data->siswa->category->name }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15%; padding: 10px;">Tahun masuk</td>
+                                        <td style="width: 3%; padding: 10px;">:</td>
+                                        <td style="width: 80%; padding: 10px;">
+                                            {{ $data->siswa->tahunMasuk->tahun }}
+                                        </td>
+                                    </tr>
+                                    <td style="width: 15%; padding: 10px;">
+                                        <hr>
+                                    </td>
+                                    <td style="width: 3%; padding: 10px;">
+                                        <hr>
+                                    </td>
+                                    <td style="width: 80%; padding: 10px;">
+                                        <hr>
+                                    </td>
+                                    <tr>
+                                        <td style="width: 15%; padding: 10px;">Pembayaran</td>
+                                        <td style="width: 3%; padding: 10px;">:</td>
+                                        <td style="width: 80%; padding: 10px;">
+                                            {{ $data->siswa->tagihans->pluck('name')->implode(', ') }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15%; padding: 10px;">Nominal Tagihan</td>
+                                        <td style="width: 3%; padding: 10px;">:</td>
+                                        <td style="width: 80%; padding: 10px;">
+                                            {{ $data->siswa->tagihans->pluck('nominal')->isNotEmpty()
+                                                ? $data->siswa->tagihans->pluck('nominal')->map(function ($nominal) {
+                                                        return Fungsi::rupiah($nominal);
+                                                    })->implode(', ')
+                                                : 'Rp: 0' }}
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15%; padding: 10px;">Nominal Dibayar</td>
+                                        <td style="width: 3%; padding: 10px;">:</td>
+                                        <td style="width: 80%; padding: 10px;">
+                                            {{ Fungsi::rupiah($data->nominal) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 15%; padding: 10px;">Tanggal</td>
+                                        <td style="width: 3%; padding: 10px;">:</td>
+                                        <td style="width: 80%; padding: 10px;">
+                                            {{ \Carbon\Carbon::parse($data->tanggal_transaksi)->format('Y/m/d') }}
                                         </td>
                                     </tr>
                                 </table>
@@ -136,7 +199,7 @@
                     </table>
 
                     <!-- TTD -->
-                    <table width="100%" style="margin-top: 5rem;">
+                    <table width="100%" style="margin-top: 1rem;">
                         <tr>
                             <td width="50%">
                                 {{-- sisi kiri --}}
@@ -146,29 +209,26 @@
                                     <tbody
                                         style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                                         <tr style="display: flex; justify-content: center; width: 100%;">
-                                            <td style="display: flex; justify-content: center;">Kepala Sekolah</td>
+                                            <td style="display: flex; justify-content: center;">TU Keuangan</td>
                                         </tr>
-                                        <tr style="display: flex; justify-content: center; width: 100%;">
-                                            <td width="100px" style="display: flex; justify-content: center;">
-                                                <img src="https://www.shutterstock.com/image-vector/fake-autograph-samples-handdrawn-signatures-260nw-2332469589.jpg"
-                                                    alt="Signature" width="110px"
-                                                    style="padding-top: 10px; padding-bottom: 10px;">
-                                            </td>
+                                        <tr
+                                            style="display: flex; justify-content: center; width: 100%; margin-bottom:80px">
                                         </tr>
-                                        <tr style="display: flex; justify-content: center; width: 100%;">
-                                            <td style="display: flex; justify-content: center; padding-top: 20px;">
-                                                Nama Kepala Sekolah
-                                            </td>
-                                        </tr>
-                                        <tr style="display: flex; justify-content: center; width: 100%;">
-                                            <td style="display: flex; justify-content: center; padding-top: 20px;">
-                                                (....................................)
-                                            </td>
-                                        </tr>
-                                        <tr style="display: flex; justify-content: center; width: 100%;">
-                                            <td style="display: flex; justify-content: center;"><i>Nama jelas dan tanda
-                                                    tangan</i></td>
-                                        </tr>
+
+                                        @if (isset($data->users) && !empty($data->users))
+                                            <tr style="display: flex; justify-content: center; width: 100%;">
+                                                <td style="display: flex; justify-content: center; padding-top: 20px;">
+                                                    ({{ $data->users->name }} )
+                                                </td>
+                                            </tr>
+                                        @else
+                                            <tr style="display: flex; justify-content: center; width: 100%;">
+                                                <td style="display: flex; justify-content: center; padding-top: 20px;">
+                                                    Nama pengguna tidak tersedia
+                                                </td>
+                                            </tr>
+                                        @endif
+
                                     </tbody>
                                 </table>
                             </td>
@@ -180,10 +240,8 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            window.print();
-        });
+    <script type="text/javascript">
+        window.print();
     </script>
 </body>
 

@@ -31,6 +31,11 @@
                                         class="form-control" value="{{ Fungsi::rupiah($data->nominal) }}"
                                         inputmode="numeric">
                                 </div>
+                                <div class="form-group">
+                                    <label>Kategori</label>
+                                    <input type="text" readonly name="category_id" required class="form-control"
+                                        value="{{ $data->category->name }}">
+                                </div>
                             </div>
                             <div class="col-lg-6 text-center">
                                 <div class="card">
@@ -56,6 +61,7 @@
                                                     aria-labelledby="home-tab">
                                                     <select name="angkatan" class="form-control select2 ">
                                                         <option selected disabled>-- Pilih Angkatan --</option>
+
                                                         @foreach ($tahun as $item)
                                                             <option value="{{ $item->id }}">Siswa Tahun Masuk
                                                                 {{ $item->tahun }}
@@ -70,6 +76,7 @@
                                                         @foreach ($siswa as $item)
                                                             <option value="{{ $item->id }}">{{ $item->name }} -
                                                                 ({{ $item->nisn }})
+                                                                - ({{ $item->category->name }})
                                                             </option>
                                                         @endforeach
                                                     </select>

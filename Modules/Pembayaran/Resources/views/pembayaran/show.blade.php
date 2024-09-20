@@ -79,8 +79,6 @@
                                                     <td>
                                                         @if ($item->pivot->status == 1)
                                                             <span class="badge badge-success">Lunas</span>
-                                                            <a href="{{ route('pembayaran.invoice', $item->pivot->id) }}"
-                                                                id="btnPrint" class="badge badge-info">Invoice</a>
                                                         @else
                                                             <span class="badge badge-danger">Belum Lunas</span>
                                                         @endif
@@ -117,10 +115,8 @@
 <!-- script -->
 <script>
     $(document).ready(function() {
-        // Inisialisasi tombol cetak
         $('#btnPrint').printPage();
 
-        // Inisialisasi DatePicker dengan auto close
         $("#datepicker-autoClose").datepicker({
             todayHighlight: true,
             autoclose: true

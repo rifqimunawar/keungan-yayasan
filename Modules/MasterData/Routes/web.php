@@ -19,15 +19,18 @@ use Modules\MasterData\Http\Controllers\SiswaController;
 //     Route::get('/', 'MasterDataController@index');
 // });
 Route::middleware(['auth', 'roles:1'])->group(function () {
+
+  Route::get('/siswa/create/get_data_kelas/{id}', [SiswaController::class, 'get_data_kelas'])->name('get_data_kelas');
+
   Route::get('/siswa', 'SiswaController@index')->name('siswa.index');
   Route::get('/siswa/create', 'SiswaController@create')->name('siswa.create');
   Route::post('/siswa', 'SiswaController@store')->name('siswa.store');
   Route::get('/siswa/{id}/edit', 'SiswaController@edit')->name('siswa.edit');
   Route::post('/siswa/{id}/update', 'SiswaController@update')->name('siswa.update');
   Route::delete('/siswa/{id}', 'SiswaController@destroy')->name('siswa.destroy');
-  Route::get('/export-siswa', function () {
-    return Excel::download(new SiswaExport, 'siswa.xlsx');
-  })->name('siswa.export');
+
+  Route::get('/siswa/export-siswa', 'SiswaController@export')->name('siswa.export');
+  Route::get('/siswa/export-siswa/{id}', 'SiswaController@exportKategori')->name('siswa.exportKategori');
   Route::get('/siswa/createImport', 'SiswaController@createImport')->name('siswa.createImport');
   Route::post('/siswa/import', [SiswaController::class, 'import'])->name('siswa.import');
 
@@ -48,7 +51,14 @@ Route::middleware(['auth', 'roles:1'])->group(function () {
 
   // menghububgkan tagihan dengan siswa
   Route::post('/tagihan/{tagihanId}/target/', 'TagihanController@hubungkanTagihanDenganTarget');
-  Route::get('/tagihan/{id}', 'TagihanController@tagihan')->name('tagihan.setting');
+  Route::get('/tagihan/{id}/{id_category}', 'TagihanController@tagihan')->name('tagihan.setting');
+  Route::get('/category', 'CategoryController@index')->name('category.index');
 
+  Route::get('/kelas', 'KelasController@index')->name('kelas.index');
+  Route::get('/kelas/create', 'KelasController@create')->name('kelas.create');
+  Route::post('/kelas', 'KelasController@store')->name('kelas.store');
+  Route::get('/kelas/{id}/edit', 'KelasController@edit')->name('kelas.edit');
+  Route::post('/kelas/{id}/update', 'KelasController@update')->name('kelas.update');
+  Route::delete('/kelas/{id}', 'KelasController@destroy')->name('kelas.destroy');
 
 });

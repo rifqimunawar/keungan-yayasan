@@ -37,7 +37,7 @@
                                         @foreach ($data as $item)
                                             <tr>
                                                 <td>
-                                                    {{ $item->id }}
+                                                    {{ $loop->iteration }}
                                                 </td>
                                                 <td>{{ $item->tahun }}</td>
                                                 <td>

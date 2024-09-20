@@ -1,1 +1,19 @@
-pembuatan module = pembayaran
+progress -> membuat ketegori untuk siswa dan filternya 
+
+pembuatan module = history pembayaran
+
+invoice -> 1 bukti lunas, yang ke 2 bukti transaksi
+invoice -> nama berdasarkan user login
+kembalian hapus
+
+button search -> sd/smp/smp
+
+journal 
+	-> from to 
+	-> export excel
+
+
+
+  fitur list tagihan targetnya kategori (sd smp smk) belum tepat
+  sementara menarget seluruh tahun masuk dari berbagai kategori (sd, smp, smk), 
+  harusnya memilih kategori sd misal terus angkatannya  

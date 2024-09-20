@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>@yield('title') &mdash; {{ config('app.name') }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- @include('partials.page-css') --}}
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -20,7 +21,6 @@
 
     @stack('css')
     <!-- Start GA -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -42,18 +42,23 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="{{ route('dashboard.index') }}">Yayasan Armaniyah</a>
+                        <a href="{{ route('dashboard.index') }}">
+                            <div style="width: 100px; display:flex;">
+                                <img src="{{ asset('assets/img/logo-arman.png') }}" alt="Yayasan Armaniyah"
+                                    style="max-width: 60%; height: 60%; border-radius: 10px; margin-left:15px;margin-top:10px; margin-right:10px">
+                                <p style="margin-top: 10px; font-weight: bold; color: #333;">Yayasan Armaniyah</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="{{ route('dashboard.index') }}">YA</a>
+                        <a href="{{ route('dashboard.index') }}">
+                            <img src="{{ asset('assets/img/logo-arman.png') }}" alt="Logo"
+                                style="max-width: 100%; height: auto; border-radius: 10px;">
+                        </a>
                     </div>
+
                     @include('partials.sidebar')
 
-                    {{-- <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                            <i class="fas fa-rocket"></i> Documentation
-                        </a>
-                    </div> --}}
                 </aside>
             </div>
 

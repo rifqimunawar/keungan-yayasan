@@ -101,6 +101,6 @@ class TahunMasukController extends Controller
     }
     $data->delete();
     Alert::success('Success', 'Data berhasil dihapus');
-    return redirect()->route('siswa.index');
+    return redirect()->route('tahun_masuk.index');
   }
 }
