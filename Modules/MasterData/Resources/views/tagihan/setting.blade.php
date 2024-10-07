@@ -54,17 +54,17 @@
                                                     aria-selected="false">Personal</a>
                                             </li>
                                         </ul>
-                                        <form action="/tagihan/{{ $data->id }}/target/" method="post">
+                                        <form action="{{ route('hubungkan_tagihan_dengan_target') }}" method="POST">
                                             @csrf
                                             <div class="tab-content" id="myTabContent">
                                                 <div class="tab-pane fade show active" id="home" role="tabpanel"
                                                     aria-labelledby="home-tab">
-                                                    <select name="angkatan" class="form-control select2 ">
+                                                    <select name="angkatan" class="form-control select2">
                                                         <option selected disabled>-- Pilih Angkatan --</option>
-
                                                         @foreach ($tahun as $item)
-                                                            <option value="{{ $item->id }}">Siswa Tahun Masuk
-                                                                {{ $item->tahun }}
+                                                            <option value="{{ $item->id }}">
+                                                                Tahun Masuk {{ $item->tahun }} / Kelas {{ $item->kelas }}
+                                                                / {{ $data->category->name }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -75,14 +75,13 @@
                                                         <option disabled selected>-- Pilih Siswa --</option>
                                                         @foreach ($siswa as $item)
                                                             <option value="{{ $item->id }}">{{ $item->name }} -
-                                                                ({{ $item->nisn }})
-                                                                - ({{ $item->category->name }})
+                                                                ({{ $item->kelas->name }}) - ({{ $item->category->name }})
                                                             </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                                 @if ($errors->any())
-                                                    <div class="alert alert-danger pt-4 " role="alert">
+                                                    <div class="alert alert-danger pt-4" role="alert">
                                                         <p><strong>Error</strong></p>
                                                         <ul>
                                                             @foreach ($errors->all() as $error)
@@ -91,13 +90,14 @@
                                                         </ul>
                                                     </div>
                                                 @endif
+                                                <input type="hidden" name="category_id" value="{{ $data->category->id }}">
+                                                <input type="hidden" name="tagihan_id" value="{{ $data->id }}">
                                             </div>
                                             <div class="d-flex justify-content-center mt-4">
                                                 <a href="{{ route('tagihan.index') }}"
                                                     class="btn btn-warning mr-2">Kembali</a>
-                                                <button type="submit" class="btn btn-primary ">Simpan</button>
+                                                <button type="submit" class="btn btn-primary">Simpan</button>
                                             </div>
-
                                         </form>
 
                                     </div>

@@ -139,15 +139,23 @@ class TagihanController extends Controller
   {
     $siswa = Siswa::with('category')->where('category_id', $id_category)->latest()->get();
     $data = Tagihan::with('category')->findOrFail($id);
-    $tahun = TahunMasuk::latest()->get();
+
+    if ($id_category == 2 || $id_category == 3) {
+      $tahun = TahunMasuk::latest()->take(3)->get();
+    } else {
+      $tahun = TahunMasuk::latest()->take(6)->get();
+    }
+
     $title = "Setting Tagihan " . $data->name;
 
-    // dd($siswa);
     return view('masterdata::tagihan.setting', ['siswa' => $siswa, 'tahun' => $tahun, 'data' => $data, 'title' => $title]);
   }
 
-  public function hubungkanTagihanDenganTarget($tagihanId, Request $request)
+
+  public function hubungkanTagihanDenganTarget(Request $request)
   {
+    $tagihanId = $request->input('tagihan_id');
+
     // Validasi: Jika kedua field 'siswa' dan 'angkatan' diisi atau tidak diisi sama sekali
     if (($request->filled('siswa') && $request->filled('angkatan')) || (!$request->filled('siswa') && !$request->filled('angkatan'))) {
       Alert::error('Oops...', 'Pilih salah satu, siswa atau angkatan');
@@ -177,8 +185,11 @@ class TagihanController extends Controller
 
     // Untuk berdasarkan angkatan
     if ($request->filled('angkatan')) {
+      $category_id = $request->input('category_id');
       $angkatanId = $request->input('angkatan');
-      $siswaAngkatan = Siswa::where('tahun_masuk_id', $angkatanId)->get();
+      $siswaAngkatan = Siswa::where('tahun_masuk_id', $angkatanId)
+        ->where('category_id', $category_id)
+        ->get();
 
       foreach ($siswaAngkatan as $siswa) {
         if (!$tagihan->siswas->contains($siswa->id)) {

@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Print Page</title>
     <style type="text/css">
+        /* Styling for normal view */
+        .print-preview {
+            display: none;
+        }
+
+        /* Styling specifically for print preview */
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .print-preview {
+                display: block;
+            }
+        }
+
         fieldset {
             border: 0px solid #ddd !important;
             margin: 0;

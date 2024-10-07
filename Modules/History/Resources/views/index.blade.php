@@ -15,84 +15,48 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+
                         <div class="card-header">
                             <h4>Table {{ $title }}</h4>
 
-                            <div class="d-flex">
-                                <!-- Tombol SD -->
-                                <form action="{{ route('history.index') }}" class="ml-4" method="GET">
-                                    <div class="input-group mb-3">
-                                        <input type="hidden" name="search" value="1">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-warning m-2" type="submit">SD</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <!-- Tombol SMP -->
-                                <form action="{{ route('history.index') }}" method="GET">
-                                    <div class="input-group mb-3">
-                                        <input type="hidden" name="search" value="2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-info m-2" type="submit">SMP</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <!-- Tombol SMA -->
-                                <form action="{{ route('history.index') }}" method="GET">
-                                    <div class="input-group mb-3">
-                                        <input type="hidden" name="search" value="3">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-secondary m-2" type="submit">SMA</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- Pilihan Tanggal -->
-                                <form action="{{ route('history.index') }}" method="GET">
-                                    <div class="input-group-append">
-                                        <select class="form-control form-control-sm" name="search" id="dateRangeSelector"
-                                            onchange="handleDateRangeChange(this)"
-                                            style="height: 35px; margin-top:7px; padding:0; padding-left:25px">
-                                            <option value="">-- Pilih Waktu --</option>
-                                            <option value="{{ \Carbon\Carbon::today()->toDateString() }}">Hari ini</option>
-                                            <option value="{{ \Carbon\Carbon::now()->subDay()->toDateString() }}">Kemarin
-                                            </option>
-                                            <option value="custom">Custom Range dari tanggal ke tanggal</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Input Tanggal Custom Range -->
-                                    <div id="customDateRange" style="display: none; margin-top: 10px;"
-                                        class="card-body shadow lg">
-                                        <label for="">start</label>
-                                        <input type="date" name="from_date" class="form-control form-control-sm"
-                                            placeholder="Dari Tanggal">
-                                        <label for="">end</label>
-                                        <input type="date" name="to_date" class="form-control form-control-sm"
-                                            placeholder="Ke Tanggal">
-                                        <button type="submit" class="btn btn-primary btn-sm"
-                                            style="margin-top: 5px;">Filter</button>
-                                    </div>
-                                </form>
-
-                                <!-- Script untuk Menangani Custom Range -->
-                                <script>
-                                    function handleDateRangeChange(select) {
-                                        const customDateRange = document.getElementById('customDateRange');
-                                        if (select.value === 'custom') {
-                                            customDateRange.style.display = 'block';
-                                        } else {
-                                            customDateRange.style.display = 'none';
-                                            select.form.submit(); // Kirim form jika bukan 'custom'
-                                        }
-                                    }
-                                </script>
-
+                            <!-- Pilih Jenjang -->
+                            <div class="btn-group col-lg-3">
+                                <button id="dropdownJenjang" class="btn btn-info dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Semua Jenjang
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('history.index') }}"
+                                        onclick="setJenjang('Semua Jenjang')">Semua Jenjang</a>
+                                    <a class="dropdown-item" href="{{ route('history.index') }}?search=1"
+                                        onclick="setJenjang('SD')">SD</a>
+                                    <a class="dropdown-item" href="{{ route('history.index') }}?search=2"
+                                        onclick="setJenjang('SMP')">SMP</a>
+                                    <a class="dropdown-item" href="{{ route('history.index') }}?search=3"
+                                        onclick="setJenjang('SMK')">SMK</a>
+                                </div>
                             </div>
 
-
+                            <!-- Form Pilihan Tanggal -->
+                            <form action="{{ route('history.index') }}" method="GET">
+                                <div class="d-flex align-items-center">
+                                    <div class="group me-2">
+                                        <input type="date" name="from_date" id="fromDate"
+                                            class="form-control form-control-sm" value="{{ old('from_date', $from_date) }}">
+                                    </div>
+                                    <div class="group me-2">
+                                        <input type="date" name="to_date" id="toDate"
+                                            class="form-control form-control-sm" value="{{ old('to_date', $to_date) }}">
+                                    </div>
+                                    <div class="group me-2">
+                                        <button type="submit" class="btn btn-primary btn-sm">Filter</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+
+
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped" id="table-1">
@@ -126,11 +90,9 @@
                                                 <td>{{ \Carbon\Carbon::parse($item->tanggal_transaksi)->translatedFormat('d F Y') }}
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="{{ route('pembayaran.invoice', $item->id) }}"
-                                                        class="btn btn-primary"
-                                                        style="font-size: 10px; padding: 10px 20px;">
-                                                        <i class="fa fa-money" style="font-size: 10px;"></i>
-                                                        Invoice</a>
+                                                    <a href="javascript:void(0);" class="badge badge-info"
+                                                        onclick="printInvoice('{{ route('pembayaran.invoice', $item->id) }}')"><i
+                                                            class="fa fa-print" aria-hidden="true"></i>Invoice</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -142,5 +104,31 @@
                 </div>
             </div>
         </div>
+        <!-- Untuk Print -->
+        <iframe id="printFrame" style="display:none;"></iframe>
     </section>
 @endsection
+<!-- script -->
+<script>
+    // Untuk Print
+    function printInvoice(url) {
+        var iframe = document.getElementById('printFrame');
+        iframe.src = url;
+        iframe.onload = function() {
+            iframe.contentWindow.print();
+        };
+    }
+    // Function to set the selected jenjang in localStorage
+    function setJenjang(jenjang) {
+        localStorage.setItem('selectedJenjang', jenjang);
+        document.getElementById('dropdownJenjang').innerText = jenjang;
+    }
+
+    // Load the selected jenjang from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        var selectedJenjang = localStorage.getItem('selectedJenjang');
+        if (selectedJenjang) {
+            document.getElementById('dropdownJenjang').innerText = selectedJenjang;
+        }
+    });
+</script>

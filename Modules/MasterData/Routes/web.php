@@ -3,6 +3,7 @@
 use App\Exports\SiswaExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Modules\MasterData\Http\Controllers\SiswaController;
+use Modules\MasterData\Http\Controllers\TagihanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +51,7 @@ Route::middleware(['auth', 'roles:1'])->group(function () {
   Route::delete('/tagihan/{id}', 'TagihanController@destroy')->name('tagihan.destroy');
 
   // menghububgkan tagihan dengan siswa
-  Route::post('/tagihan/{tagihanId}/target/', 'TagihanController@hubungkanTagihanDenganTarget');
+  Route::post('/tagihan/target', [TagihanController::class, 'hubungkanTagihanDenganTarget'])->name('hubungkan_tagihan_dengan_target');
   Route::get('/tagihan/{id}/{id_category}', 'TagihanController@tagihan')->name('tagihan.setting');
   Route::get('/category', 'CategoryController@index')->name('category.index');
 

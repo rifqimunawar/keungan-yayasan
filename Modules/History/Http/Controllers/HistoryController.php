@@ -17,31 +17,42 @@ class HistoryController extends Controller
   public function index(Request $request)
   {
     $title = 'Tagihan Pembayaran Siswa';
-
     $search = $request->input('search');
     $from_date = $request->input('from_date');
     $to_date = $request->input('to_date');
 
     $query = History::with(['siswa.tagihans', 'users']);
 
-    if ($search && $search !== 'custom') {
-      if ($search !== 'seminggu') {
-        $query->whereHas('siswa', function ($query) use ($search) {
-          $query->where('category_id', 'like', '%' . $search . '%');
-        })->orWhereDate('tanggal_transaksi', $search);
+    if ($search) {
+      if ($search == 1) {
+        $query->whereHas('siswa', function ($query) {
+          $query->where('category_id', 'like', '%SD%');
+        });
+      } elseif ($search == 2) {
+        $query->whereHas('siswa', function ($query) {
+          $query->where('category_id', 'like', '%SMP%');
+        });
+      } elseif ($search == 3) {
+        $query->whereHas('siswa', function ($query) {
+          $query->where('category_id', 'like', '%SMK%');
+        });
+      } elseif ($search == 'custom' && $from_date && $to_date) {
+        $query->whereBetween('tanggal_transaksi', [$from_date, $to_date]);
+      } else {
+        $query->whereDate('tanggal_transaksi', $search);
       }
-    }
-
-    if ($from_date && $to_date) {
-      $query->whereBetween('tanggal_transaksi', [$from_date, $to_date]);
     }
 
     $data = $query->latest()->get();
 
-    return view('history::index', ['data' => $data, 'title' => $title]);
+    // Passing 'from_date' and 'to_date' to the view
+    return view('history::index', [
+      'data' => $data,
+      'title' => $title,
+      'search' => $search,
+      'from_date' => $from_date,
+      'to_date' => $to_date
+    ]);
   }
-
-
-
 
 }

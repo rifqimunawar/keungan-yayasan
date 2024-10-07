@@ -15,77 +15,59 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header d-flex">
                             <h4>Table {{ $title }}</h4>
                             <a href="{{ route('siswa.create') }}" class="ml-2 btn btn-primary"> Tambah <ion-icon
                                     name="add-circle-outline"></ion-icon><i class="ml-2 fa fa-plus"></i></a>
-                            <?php
-                            $search = request()->query('search');
-                            ?>
-                            <div class="d-flex">
-
-                                <!-- Export Semua -->
+                            <?php $search = request()->query('search'); ?>
+                            <div class="d-flex justify-content-end">
+                                <!-- Export -->
                                 @if (is_null($search))
-                                    <a href="{{ route('siswa.export') }}" class="ml-2 btn btn-success">
+                                    <a href="{{ route('siswa.export') }}" class="ml-2 btn btn-info">
                                         <ion-icon name="document-export-outline mx-2"></ion-icon>
                                         <i class="fa fa-file-excel-o"></i> Export Semua
                                     </a>
                                 @elseif ($search == 1)
-                                    <a href="{{ route('siswa.exportKategori', 1) }}" class="ml-2 btn btn-success">
+                                    <a href="{{ route('siswa.exportKategori', 1) }}" class="ml-2 btn btn-info">
                                         <ion-icon name="document-export-outline mx-2"></ion-icon>
                                         <i class="fa fa-file-excel-o"></i> Export SD
                                     </a>
                                 @elseif ($search == 2)
-                                    <a href="{{ route('siswa.exportKategori', 2) }}" class="ml-2 btn btn-success">
+                                    <a href="{{ route('siswa.exportKategori', 2) }}" class="ml-2 btn btn-info">
                                         <ion-icon name="document-export-outline mx-2"></ion-icon>
                                         <i class="fa fa-file-excel-o"></i> Export SMP
                                     </a>
                                 @elseif ($search == 3)
-                                    <a href="{{ route('siswa.exportKategori', 3) }}" class="ml-2 btn btn-success">
+                                    <a href="{{ route('siswa.exportKategori', 3) }}" class="ml-2 btn btn-info">
                                         <ion-icon name="document-export-outline mx-2"></ion-icon>
-                                        <i class="fa fa-file-excel-o"></i> Export SMA
+                                        <i class="fa fa-file-excel-o"></i> Export SMK
                                     </a>
                                 @endif
 
+                                <!-- Import Excel -->
+                                <a href="{{ route('siswa.createImport') }}" class="ml-2 btn btn-primary">
+                                    <ion-icon name="document-export-outline mx-2"></ion-icon>
+                                    <i class="fa fa-file-excel-o"></i> Import Excel
+                                </a>
+
+                                <!-- Pilih Jenjang -->
+                                <div class="btn-group ml-2">
+                                    <button id="dropdownJenjang" class="btn btn-info dropdown-toggle" type="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Semua Jenjang
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ route('siswa.index') }}"
+                                            onclick="setJenjang('Semua Jenjang')">Semua Jenjang</a>
+                                        <a class="dropdown-item" href="{{ route('siswa.index') }}?search=1"
+                                            onclick="setJenjang('SD')">SD</a>
+                                        <a class="dropdown-item" href="{{ route('siswa.index') }}?search=2"
+                                            onclick="setJenjang('SMP')">SMP</a>
+                                        <a class="dropdown-item" href="{{ route('siswa.index') }}?search=3"
+                                            onclick="setJenjang('SMK')">SMK</a>
+                                    </div>
+                                </div>
                             </div>
-
-                            <a href="{{ route('siswa.createImport') }}" class="ml-2 btn btn-info">
-                                <ion-icon name="document-export-outline mx-2"></ion-icon>
-                                <i class="fa fa-file-excel-o"></i> Import Excel
-                            </a>
-
-                            <div class="d-flex ">
-                                <form action="{{ route('siswa.index') }}" class="ml-4" method="GET">
-                                    <div class="input-group mb-3">
-                                        <!-- Tombol SD -->
-                                        <input type="hidden" name="search" value="1">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-warning m-2" type="submit">SD</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <form action="{{ route('siswa.index') }}" method="GET">
-                                    <div class="input-group mb-3">
-                                        <!-- Tombol SMP -->
-                                        <input type="hidden" name="search" value="2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-info m-2" type="submit">SMP</button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <form action="{{ route('siswa.index') }}" method="GET">
-                                    <div class="input-group mb-3">
-                                        <!-- Tombol SMA -->
-                                        <input type="hidden" name="search" value="3">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-secondary m-2" type="submit">SMA</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -137,3 +119,18 @@
         </div>
     </section>
 @endsection
+<script>
+    // Function to set the selected jenjang in localStorage
+    function setJenjang(jenjang) {
+        localStorage.setItem('selectedJenjang', jenjang);
+        document.getElementById('dropdownJenjang').innerText = jenjang;
+    }
+
+    // Load the selected jenjang from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        var selectedJenjang = localStorage.getItem('selectedJenjang');
+        if (selectedJenjang) {
+            document.getElementById('dropdownJenjang').innerText = selectedJenjang;
+        }
+    });
+</script>

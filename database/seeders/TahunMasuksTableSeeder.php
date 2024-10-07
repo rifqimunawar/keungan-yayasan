@@ -23,9 +23,9 @@ class TahunMasuksTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'tahun' => '2017/2018',
-                'deleted_at' => NULL,
+                'deleted_at' => '2024-09-20 21:28:22',
                 'created_at' => '2024-08-21 09:38:34',
-                'updated_at' => '2024-08-21 09:39:46',
+                'updated_at' => '2024-09-20 21:28:22',
             ),
             1 => 
             array (

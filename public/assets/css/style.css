@@ -61,6 +61,18 @@
   box-shadow: none !important;
   outline: none; }
 
+  body{
+    zoom: 0.9;
+}
+
+.modal {
+  z-index: 1055;
+}
+
+.modal-backdrop {
+  z-index: 1050;
+}
+
 a {
   color: #6777ef;
   font-weight: 500;

@@ -70,8 +70,7 @@
                                     <span id="nominalTagihan" style="display: none;">{{ $sisa_nominal ?? 0 }}</span>
                                     <div class="form-group-row mb-3">
                                         <label for="">Tanggal</label>
-                                        <input readonly type="datetime-local" class="form-control"
-                                            value="{{ $tanggal }}">
+                                        <input type="datetime-local" class="form-control" value="{{ $tanggal }}">
                                     </div>
                                     <div class="form-group-row mb-3">
                                         <label for="">Nominal Pembayaran</label>
@@ -139,8 +138,9 @@
                                     </td> --}}
                                     <td>{{ $item->users->name }}</td>
                                     <td>
-                                        <a href="{{ route('pembayaran.invoice', $item->id) }}" id="btnPrint"
-                                            class="badge badge-info">Invoice</a>
+                                        <a href="javascript:void(0);" class="badge badge-info"
+                                            onclick="printInvoice('{{ route('pembayaran.invoice', $item->id) }}')"><i
+                                                class="fa fa-print" aria-hidden="true"></i>Invoice</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -153,10 +153,21 @@
             </div>
         </div>
         </div>
+        <!-- Untuk Print -->
+        <iframe id="printFrame" style="display:none;"></iframe>
     </section>
 @endsection
 <!-- script -->
 <script>
+    // Untuk Print
+    function printInvoice(url) {
+        var iframe = document.getElementById('printFrame');
+        iframe.src = url;
+        iframe.onload = function() {
+            iframe.contentWindow.print();
+        };
+    }
+
     function calculateChange() {
         const payment = parseFloat(document.getElementById('rupiah').value.replace(/[^0-9]/g, "")) || 0;
         const nominalTagihan = parseFloat(document.getElementById('nominalTagihan').innerText) || 0;

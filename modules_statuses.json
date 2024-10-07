@@ -3,5 +3,6 @@
     "Dashboard": true,
     "MasterData": true,
     "Pembayaran": true,
-    "History": true
+    "History": true,
+    "Message": true
 }
