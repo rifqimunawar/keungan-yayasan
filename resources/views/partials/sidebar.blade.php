@@ -41,12 +41,12 @@
             <span>Journal</span>
         </a>
     </li>
-    <li class="dropdown {{ Request::is('message*') ? 'active' : '' }}">
+    {{-- <li class="dropdown {{ Request::is('message*') ? 'active' : '' }}">
         <a href="{{ route('message.create') }}">
             <i class="fas fa-columns"></i>
             <span>Pesan</span>
         </a>
-    </li>
+    </li> --}}
 
     <li class="menu-header">End</li>
     <li class="dropdown p-3 mb-5 ">
