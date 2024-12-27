@@ -1,23 +1,26 @@
 progress -> membuat ketegori untuk siswa dan filternya 
 
-pembuatan module = history pembayaran
+pembuatan module = history pembayaran (done)
 
-invoice -> 1 bukti lunas, yang ke 2 bukti transaksi
-invoice -> nama berdasarkan user login
-kembalian hapus
+invoice -> 1 bukti lunas, yang ke 2 bukti transaksi (done)
+invoice -> nama berdasarkan user login (done)
+kembalian hapus (done)
 
-button search -> sd/smp/smp
+button search -> sd/smp/smp (done)
 
-journal 
+journal (done)
 	-> from to 
 	-> export excel
 
+fitur list tagihan targetnya kategori (sd smp smk) belum tepat
+sementara menarget seluruh tahun masuk dari berbagai kategori (sd, smp, smk), 
+harusnya memilih kategori sd misal terus angkatannya   (done)
 
 
-  fitur list tagihan targetnya kategori (sd smp smk) belum tepat
-  sementara menarget seluruh tahun masuk dari berbagai kategori (sd, smp, smk), 
-  harusnya memilih kategori sd misal terus angkatannya  
+24 november 2024,
+-bug di module journal filter by date
 
 
 
-  fitur kenaikan kelas -> sedang dipertimbangkan
+fitur kenaikan kelas -> sedang dipertimbangkan
+fitur notifikasi wa -> sedang dipertimbangkan

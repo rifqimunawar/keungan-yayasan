@@ -18,4 +18,9 @@ use Modules\History\Http\Controllers\HistoryController;
 
 Route::middleware(['auth', 'roles:1,2'])->group(function () {
   Route::get('/history', 'HistoryController@index')->name('history.index');
+  Route::get('/history_transaksi_per_siswa', 'HistoryController@transaksiPerSiswa')->name('history.transaksiPerSiswa');
+  Route::get('/history_transaksi_per_siswa/{id}/invoice', 'HistoryController@invoicePerSiswa')->name('history.invoicePerSiswa');
+
+  Route::get('/history/export-history', 'HistoryController@export')->name('history.export');
+  Route::get('/history/export-history/{id}', 'HistoryController@exportKategori')->name('history.exportKategori');
 });

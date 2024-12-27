@@ -98,122 +98,112 @@
             <fieldset>
                 <div class="row">
                     <!-- HEADER -->
-                    <table border="0" class="header" width="100%">
+                    {{-- <table width="100%">
                         <tr>
-                            <td class="table_td header_text" width="20%" align="center">
-                                <img alt="logo" src="{{ asset('assets/img/logo-arman.png') }}" height="70"
-                                    width="70" style="margin-top: 20px">
-                                <p>YAYASAN ARMANIYAH </p>
+                            <td width="10%" align="center" style="text-align: center;">
+                                <img alt="logo" src="{{ asset('assets/img/logo-arman.png') }}" height="70px"
+                                    width="70px" style="margin-top: 20px">
                             </td>
-                            <td class="table_td header_text" width="28%" align="center" colspan="2"
-                                style="font-weight: bold;vertical-align:middle">
-                                <label>
-                                    <h2>BUKTI PEMBAYARAN</h2>
-                                </label>
+
+                            <td width="40%" valign="top" style="padding-left: 10px;">
+                                <p style="margin: 5px 0 0; font-weight: bold; font-size:28px">YAYASAN ARMANIYAH</p>
+                                <p style="margin: 0;">
+                                    Kp. Tonjong RT 008 RW 004, Ds. Sukaragam<br>
+                                    Kec. Serang Baru, Kab. Bekasi (17330) - Indonesia<br>
+                                    Telp. : (021) 2215-4740
+                                </p>
                             </td>
-                            <td class="table_td header_text" width="20%">
-                                <table border="0" class="table2" width="100%">
-                                    <tr style="padding-top: 10px">
+
+                            <td class=" header_text" width="25%">
+                                <table border="0" class="" width="100%">
+                                    <tr style="padding-top: 5px">
                                         <td style="color: transparent;">|||</td>
                                         <td> </td>
                                         <td> </td>
                                     </tr>
                                     <tr>
-                                        <td width="40%">No. Transaksi</td>
+                                        <td width="40%">Nomor</td>
                                         <td width="1%">:</td>
                                         <td width="60%">
-                                            {{ $data->id }}/{{ $data->siswa->id }}/{{ $data->siswa->tagihans->pluck('id')->implode(', ') }}/{{ \Carbon\Carbon::parse($data->tanggal_transaksi)->format('Y/m/d') }}
+                                            {{ $data->id }}/{{ \Carbon\Carbon::parse($data->tanggal_transaksi)->format('Y/m/d') }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Nama</td>
+                                        <td>Tanggal </td>
                                         <td>:</td>
-                                        <td>{{ $data->siswa->name }}</td>
+                                        <td>{{ $data->tanggal_transaksi->format('d/m/Y') }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Kategori</td>
+                                        <td>Unit</td>
                                         <td>:</td>
                                         <td>{{ $data->siswa->category->name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tahun Masuk</td>
-                                        <td>:</td>
-                                        <td>{{ $data->siswa->tahunMasuk->tahun }}</td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
+                    </table> --}}
+
+                    <table border="0" style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                        <tr>
+                            <td style="padding-top: 100px">
+                                &emsp;
+                            </td>
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td style="font-size: 16px; padding: 5px; text-align: center;">
+                                <p style="margin: 5px 0 0; font-weight: bold; font-size:18px">BUKTI PEMBAYARAN</p>
+                            </td>
+                        </tr>
                     </table>
 
+
                     <!-- ISI KONTEN -->
-                    <table style="width: 100%; border-collapse: collapse; margin-top:3rem">
+                    <table style="width: 100%; border-collapse: collapse; margin-top:1rem">
                         <tr>
                             <td style="width: 50%; text-align: center; vertical-align: top; padding: 2px;">
-                                <table style="width: 100%; border-collapse: collapse;">
+                                <table border="0" style="width: 100%; border-collapse: collapse;">
                                     <tr>
-                                        <td style="width: 15%; padding: 10px;">Nama</td>
-                                        <td style="width: 3%; padding: 10px;">:</td>
-                                        <td style="width: 80%; padding: 10px;">
+                                        <td style="width: 15%; padding: 5px;">Nama Siswa</td>
+                                        <td style="width: 3%; padding: 5px;">:</td>
+                                        <td style="width: 80%; padding: 5px;">
                                             {{ $data->siswa->name }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 15%; padding: 10px;">Kategori</td>
-                                        <td style="width: 3%; padding: 10px;">:</td>
-                                        <td style="width: 80%; padding: 10px;">
-                                            {{ $data->siswa->category->name }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%; padding: 10px;">Tahun masuk</td>
-                                        <td style="width: 3%; padding: 10px;">:</td>
-                                        <td style="width: 80%; padding: 10px;">
-                                            {{ $data->siswa->tahunMasuk->tahun }}
-                                        </td>
-                                    </tr>
-                                    <td style="width: 15%; padding: 10px;">
-                                        <hr>
-                                    </td>
-                                    <td style="width: 3%; padding: 10px;">
-                                        <hr>
-                                    </td>
-                                    <td style="width: 80%; padding: 10px;">
-                                        <hr>
-                                    </td>
-                                    <tr>
-                                        <td style="width: 15%; padding: 10px;">Pembayaran</td>
-                                        <td style="width: 3%; padding: 10px;">:</td>
-                                        <td style="width: 80%; padding: 10px;">
-                                            {{ $data->siswa->tagihans->pluck('name')->implode(', ') }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%; padding: 10px;">Nominal Tagihan</td>
-                                        <td style="width: 3%; padding: 10px;">:</td>
-                                        <td style="width: 80%; padding: 10px;">
-                                            {{ $data->siswa->tagihans->pluck('nominal')->isNotEmpty()
-                                                ? $data->siswa->tagihans->pluck('nominal')->map(function ($nominal) {
-                                                        return Fungsi::rupiah($nominal);
-                                                    })->implode(', ')
-                                                : 'Rp: 0' }}
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%; padding: 10px;">Nominal Dibayar</td>
-                                        <td style="width: 3%; padding: 10px;">:</td>
-                                        <td style="width: 80%; padding: 10px;">
-                                            {{ Fungsi::rupiah($data->nominal) }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%; padding: 10px;">Tanggal</td>
-                                        <td style="width: 3%; padding: 10px;">:</td>
-                                        <td style="width: 80%; padding: 10px;">
-                                            {{ \Carbon\Carbon::parse($data->tanggal_transaksi)->format('Y/m/d') }}
+                                        <td style="width: 15%; padding: 5px;">Kelas</td>
+                                        <td style="width: 3%; padding: 5px;">:</td>
+                                        <td style="width: 80%; padding: 5px;">
+                                            {{ $data->siswa->kelas->name }} {{ $data->siswa->category->name }}
                                         </td>
                                     </tr>
                                 </table>
+                                <table border="0" style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <th style="text-align: center; vertical-align: middle;">No</th>
+                                        <th style="text-align: center; vertical-align: middle;">Keterangan Pembayaran
+                                        </th>
+                                        <th style="text-align: center; vertical-align: middle;">Jumlah</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{ $data->siswa->tagihans->pluck('name')->implode(', ') }}</td>
+                                        <td>{{ Fungsi::rupiah($data->nominal) }}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &emsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Catatan
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                - Disimpan sebagai bukti pembayaran yang sah
                             </td>
                         </tr>
                     </table>
@@ -225,31 +215,28 @@
                                 {{-- sisi kiri --}}
                             </td>
                             <td width="50%">
-                                <table width="100%" <table width="100%" style="text-align: center;">
-                                    <tbody
-                                        style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                                        <tr style="display: flex; justify-content: center; width: 100%;">
-                                            <td style="display: flex; justify-content: center;">TU Keuangan</td>
-                                        </tr>
-                                        <tr
-                                            style="display: flex; justify-content: center; width: 100%; margin-bottom:80px">
-                                        </tr>
-
-                                        @if (isset($data->users) && !empty($data->users))
-                                            <tr style="display: flex; justify-content: center; width: 100%;">
-                                                <td style="display: flex; justify-content: center; padding-top: 20px;">
-                                                    ({{ $data->users->name }} )
-                                                </td>
-                                            </tr>
-                                        @else
-                                            <tr style="display: flex; justify-content: center; width: 100%;">
-                                                <td style="display: flex; justify-content: center; padding-top: 20px;">
-                                                    Nama pengguna tidak tersedia
-                                                </td>
-                                            </tr>
-                                        @endif
-
-                                    </tbody>
+                                <table width="100%" border="0"
+                                    style="text-align: center; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="padding: 0; text-align: center; ">Penerima
+                                        </td>
+                                        <td style="padding: 0; text-align: center; ">TU Keuangan
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 20px 0;">&emsp;</td>
+                                        <td style="padding: 20px 0;">&emsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0;"></td>
+                                        <td style="padding: 0; text-align: center; ">
+                                            @if (isset($data->users) && !empty($data->users))
+                                                ({{ $data->users->name }} )
+                                            @else
+                                                Nama pengguna tidak tersedia
+                                            @endif
+                                        </td>
+                                    </tr>
                                 </table>
                             </td>
                         </tr>
@@ -261,7 +248,7 @@
     </div>
 
     <script type="text/javascript">
-        window.print();
+        // window.print();
     </script>
 </body>
 

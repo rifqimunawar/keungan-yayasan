@@ -27,6 +27,10 @@ class SiswaController extends Controller
     $title = 'Data Siswa';
     $search = $request->input('search');
 
+    $alert = 'Delete Data!';
+    $text = "Are you sure you want to delete?";
+    confirmDelete($alert, $text);
+
     if ($search) {
       $data = Siswa::with(['tahunMasuk', 'category'])
         ->where('category_id', 'like', '%' . $search . '%')

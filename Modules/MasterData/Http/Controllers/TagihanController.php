@@ -128,7 +128,7 @@ class TagihanController extends Controller
     $data = Tagihan::findOrFail($id);
     if ($data->siswas('')->count() > 0) {
       Alert::error('Oops....', 'Data tidak dapat dihapus karena siswa memiliki tagihan');
-      return redirect()->route('siswa.index');
+      return redirect()->route('tagihan.index');
     }
     $data->delete();
     Alert::success('Success', 'Data berhasil dihapus');

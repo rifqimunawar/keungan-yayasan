@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Modules\History\Entities\History;
+use Modules\MasterData\Entities\KetPembayaran;
 use Modules\MasterData\Entities\Siswa;
 use Modules\MasterData\Entities\Tagihan;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -92,6 +93,7 @@ class PembayaranController extends Controller
         ->value('nominal_tagihan_terbayar') ?? 0;
       $sisa_nominal = $nominal_tagihan - $nominal_tagihan_terbayar;
 
+      $data_ketpembayaran = KetPembayaran::all();
 
       $history_pembayaran = History::where('siswa_id', $siswa_id)
         ->with(['siswa.tagihans', 'users'])
@@ -103,7 +105,8 @@ class PembayaranController extends Controller
         'data' => $data,
         'title' => $title,
         'sisa_nominal' => $sisa_nominal,
-        'history_pembayaran' => $history_pembayaran
+        'history_pembayaran' => $history_pembayaran,
+        'data_ketpembayaran' => $data_ketpembayaran
       ]);
     }
 
@@ -124,6 +127,7 @@ class PembayaranController extends Controller
     $history->siswa_id = $data['siswa_id'];
     $history->tagihan_id = $data['tagihan_id'];
     $history->user_id = Auth::user()->id;
+    $history->ketpembayaran_id = $data['ketpembayaran_id'];
 
     $history->save();
 
@@ -164,6 +168,7 @@ class PembayaranController extends Controller
       },
       'users'
     ])->findOrFail($id);
+    $data->tanggal_transaksi = Carbon::parse($data->tanggal_transaksi);
 
     return view('pembayaran::pembayaran.invoice', ['data' => $data, 'title' => $title]);
   }

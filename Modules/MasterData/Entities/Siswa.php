@@ -18,10 +18,11 @@ class Siswa extends Model
   }
   public function tagihans()
   {
-    return $this->belongsToMany(Tagihan::class, 'siswa_tagihan')
-      ->withPivot('id', 'status', 'nominal_tagihan', 'nominal_tagihan_terbayar')
-      ->withTimestamps();
+      return $this->belongsToMany(Tagihan::class, 'siswa_tagihan', 'siswa_id')
+          ->withPivot('id', 'status', 'nominal_tagihan', 'nominal_tagihan_terbayar')
+          ->withTimestamps();
   }
+  
   public function category()
   {
     return $this->belongsTo(Category::class, 'category_id');

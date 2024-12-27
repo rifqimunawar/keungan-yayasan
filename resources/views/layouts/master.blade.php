@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     {{-- <title>@yield('title') &mdash; {{ config('app.name') }}</title> --}}
-    <title>.:Yayasan Armaniyah:.</title>
+    <title>.:Yayasan Armaniyyah:.</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo-arman.png') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- @include('partials.page-css') --}}
     <!-- General CSS Files -->
@@ -46,7 +47,7 @@
                             <div style="width: 100px; display:flex;">
                                 <img src="{{ asset('assets/img/logo-arman.png') }}" alt="Yayasan Armaniyah"
                                     style="max-width: 60%; height: 60%; border-radius: 10px; margin-left:15px;margin-top:10px; margin-right:10px">
-                                <p style="margin-top: 10px; font-weight: bold; color: #333;">Yayasan Armaniyah</p>
+                                <p style="margin-top: 10px; font-weight: bold; color: #333;">Yayasan Armaniyyah</p>
                             </div>
                         </a>
                     </div>

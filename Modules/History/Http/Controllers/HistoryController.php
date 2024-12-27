@@ -4,8 +4,11 @@ namespace Modules\History\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use Modules\History\Entities\History;
 use Modules\MasterData\Entities\Siswa;
+use Modules\MasterData\Entities\Category;
+use Modules\History\Exports\HistoryExport;
 use Illuminate\Contracts\Support\Renderable;
 
 class HistoryController extends Controller
@@ -16,36 +19,38 @@ class HistoryController extends Controller
    */
   public function index(Request $request)
   {
-    $title = 'Tagihan Pembayaran Siswa';
+    $title = 'Semua Transaksi Siswa';
     $search = $request->input('search');
     $from_date = $request->input('from_date');
     $to_date = $request->input('to_date');
 
-    $query = History::with(['siswa.tagihans', 'users']);
+    $query = History::with(['siswa.tagihans', 'tagihan', 'users']);
 
+    // Filter berdasarkan search
     if ($search) {
       if ($search == 1) {
         $query->whereHas('siswa', function ($query) {
-          $query->where('category_id', 'like', '%SD%');
+          $query->where('category_id', 'like', '%1%');
         });
       } elseif ($search == 2) {
         $query->whereHas('siswa', function ($query) {
-          $query->where('category_id', 'like', '%SMP%');
+          $query->where('category_id', 'like', '%2%');
         });
       } elseif ($search == 3) {
         $query->whereHas('siswa', function ($query) {
-          $query->where('category_id', 'like', '%SMK%');
+          $query->where('category_id', 'like', '%3%');
         });
-      } elseif ($search == 'custom' && $from_date && $to_date) {
-        $query->whereBetween('tanggal_transaksi', [$from_date, $to_date]);
-      } else {
-        $query->whereDate('tanggal_transaksi', $search);
       }
+    }
+
+    // Filter berdasarkan tanggal
+    if ($from_date && $to_date) {
+      $query->whereBetween('tanggal_transaksi', [$from_date, $to_date]);
     }
 
     $data = $query->latest()->get();
 
-    // Passing 'from_date' and 'to_date' to the view
+    // dd($data);
     return view('history::index', [
       'data' => $data,
       'title' => $title,
@@ -54,5 +59,64 @@ class HistoryController extends Controller
       'to_date' => $to_date
     ]);
   }
+
+
+
+  public function transaksiPerSiswa(Request $request)
+  {
+    $title = 'Rekapitulasi Transaksi Siswa';
+    $search = $request->input('search');
+
+    $query = History::with(['siswa', 'users']);
+
+    if ($search) {
+      if ($search == 1) {
+        $query->whereHas('siswa', function ($query) {
+          $query->where('category_id', 'like', '%1%');
+        });
+      } elseif ($search == 2) {
+        $query->whereHas('siswa', function ($query) {
+          $query->where('category_id', 'like', '%2%');
+        });
+      } elseif ($search == 3) {
+        $query->whereHas('siswa', function ($query) {
+          $query->where('category_id', 'like', '%3%');
+        });
+      }
+    }
+
+    $data = $query->latest()->get()->unique('siswa_id');
+
+    // dd($data);
+
+    return view('history::transaksiPerSiswa', [
+      'data' => $data,
+      'title' => $title,
+      'search' => $search,
+    ]);
+  }
+
+
+  public function invoicePerSiswa(Request $request, $id)
+  {
+    $data = History::invoicePerSiswa($id);
+    $data_siswa = Siswa::findOrFail($id);
+
+    // return response()->json($data);
+    return view('history::invoicePerSiswa', ['data' => $data, 'data_siswa' => $data_siswa]);
+  }
+
+  public function export(Request $request)
+  {
+    return Excel::download(new HistoryExport($request), 'pembayaran-siswa.xlsx');
+  }
+
+  public function exportKategori($id, Request $request)
+  {
+    $request->merge(['search' => $id]);
+    $category = Category::findOrFail($id);
+    return Excel::download(new HistoryExport($request), 'pembayaran-siswa-' . $category->name . '.xlsx');
+  }
+
 
 }

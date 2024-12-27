@@ -20,6 +20,7 @@ return new class extends Migration {
       $table->unsignedBigInteger('tagihan_id');
       $table->unsignedBigInteger('siswa_tagihan_id');
       $table->unsignedBigInteger('user_id');
+      $table->unsignedBigInteger('ketpembayaran_id')->nullable();
       $table->softDeletes();
       $table->timestamps();
     });

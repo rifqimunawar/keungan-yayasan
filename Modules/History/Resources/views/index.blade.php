@@ -19,6 +19,37 @@
                         <div class="card-header">
                             <h4>Table {{ $title }}</h4>
 
+                            <div class="d-flex justify-content-end">
+                                <?php $search = request()->query('search'); ?>
+                                <!-- Export -->
+                                @if (is_null($search))
+                                    <a href="{{ route('history.export', ['from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
+                                        class="ml-2 btn btn-info">
+                                        <ion-icon name="document-export-outline mx-2"></ion-icon>
+                                        <i class="fa fa-file-excel-o"></i> Export Semua
+                                    </a>
+                                @elseif ($search == 1)
+                                    <a href="{{ route('history.exportKategori', [1, 'from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
+                                        class="ml-2 btn btn-info">
+                                        <ion-icon name="document-export-outline mx-2"></ion-icon>
+                                        <i class="fa fa-file-excel-o"></i> Export SD
+                                    </a>
+                                @elseif ($search == 2)
+                                    <a href="{{ route('history.exportKategori', [2, 'from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
+                                        class="ml-2 btn btn-info">
+                                        <ion-icon name="document-export-outline mx-2"></ion-icon>
+                                        <i class="fa fa-file-excel-o"></i> Export SMP
+                                    </a>
+                                @elseif ($search == 3)
+                                    <a href="{{ route('history.exportKategori', [3, 'from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
+                                        class="ml-2 btn btn-info">
+                                        <ion-icon name="document-export-outline mx-2"></ion-icon>
+                                        <i class="fa fa-file-excel-o"></i> Export SMK
+                                    </a>
+                                @endif
+
+                            </div>
+
                             <!-- Pilih Jenjang -->
                             <div class="btn-group col-lg-3">
                                 <button id="dropdownJenjang" class="btn btn-info dropdown-toggle" type="button"
@@ -26,23 +57,29 @@
                                     Semua Jenjang
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('history.index') }}"
+                                    <a class="dropdown-item"
+                                        href="{{ route('history.index', ['from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
                                         onclick="setJenjang('Semua Jenjang')">Semua Jenjang</a>
-                                    <a class="dropdown-item" href="{{ route('history.index') }}?search=1"
+                                    <a class="dropdown-item"
+                                        href="{{ route('history.index', ['search' => 1, 'from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
                                         onclick="setJenjang('SD')">SD</a>
-                                    <a class="dropdown-item" href="{{ route('history.index') }}?search=2"
+                                    <a class="dropdown-item"
+                                        href="{{ route('history.index', ['search' => 2, 'from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
                                         onclick="setJenjang('SMP')">SMP</a>
-                                    <a class="dropdown-item" href="{{ route('history.index') }}?search=3"
+                                    <a class="dropdown-item"
+                                        href="{{ route('history.index', ['search' => 3, 'from_date' => request('from_date'), 'to_date' => request('to_date')]) }}"
                                         onclick="setJenjang('SMK')">SMK</a>
                                 </div>
                             </div>
+
 
                             <!-- Form Pilihan Tanggal -->
                             <form action="{{ route('history.index') }}" method="GET">
                                 <div class="d-flex align-items-center">
                                     <div class="group me-2">
                                         <input type="date" name="from_date" id="fromDate"
-                                            class="form-control form-control-sm" value="{{ old('from_date', $from_date) }}">
+                                            class="form-control form-control-sm"
+                                            value="{{ old('from_date', $from_date) }}">
                                     </div>
                                     <div class="group me-2">
                                         <input type="date" name="to_date" id="toDate"
@@ -85,14 +122,17 @@
                                                 <td>{{ $item->siswa->category->name }}</td>
                                                 <td>{{ $item->siswa->kelas->name }}</td>
                                                 <td>{{ $item->siswa->tahunMasuk->tahun }}</td>
-                                                <td>{{ $item->siswa->tagihans->pluck('name')->implode(', ') }}</td>
+                                                <td>{{ $item->tagihan->name }}</td>
                                                 <td>{{ Fungsi::rupiah($item->nominal) }}</td>
                                                 <td>{{ \Carbon\Carbon::parse($item->tanggal_transaksi)->translatedFormat('d F Y') }}
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="javascript:void(0);" class="badge badge-info"
+                                                    {{-- <a href="javascript:void(0);" class="badge badge-info"
                                                         onclick="printInvoice('{{ route('pembayaran.invoice', $item->id) }}')"><i
-                                                            class="fa fa-print" aria-hidden="true"></i>Invoice</a>
+                                                            class="fa fa-print" aria-hidden="true"></i>&ensp;Invoice</a> --}}
+                                                    <a href="{{ route('pembayaran.invoice', $item->id) }}"
+                                                        class="badge badge-info"><i class="fa fa-print"
+                                                            aria-hidden="true"></i>Invoice</a>
                                                 </td>
                                             </tr>
                                         @endforeach

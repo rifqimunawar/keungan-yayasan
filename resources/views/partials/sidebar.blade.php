@@ -25,6 +25,7 @@
                 <li><a class="nav-link" href="{{ route('kelas.index') }}">Data Kelas</a></li>
                 <li><a class="nav-link" href="{{ route('siswa.index') }}">Data Siswa</a></li>
                 <li><a class="nav-link" href="{{ route('tagihan.index') }}">List Tagihan</a></li>
+                <li><a class="nav-link" href="{{ route('ketpembayaran.index') }}">Keterangan Pembayaran</a></li>
             </ul>
         </li>
     @endif
@@ -36,10 +37,12 @@
         </a>
     </li>
     <li class="dropdown {{ Request::is('history*') ? 'active' : '' }}">
-        <a href="{{ route('history.index') }}">
-            <i class="fas fa-columns"></i>
-            <span>Journal</span>
-        </a>
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+            <span>Laporan</span></a>
+        <ul class="dropdown-menu">
+            <li><a class="nav-link" href="{{ route('history.index') }}">Semua Transaksi</a></li>
+            <li><a class="nav-link" href="{{ route('history.transaksiPerSiswa') }}">Transaksi per siswa</a></li>
+        </ul>
     </li>
     {{-- <li class="dropdown {{ Request::is('message*') ? 'active' : '' }}">
         <a href="{{ route('message.create') }}">

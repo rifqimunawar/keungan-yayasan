@@ -28,7 +28,7 @@ Route::middleware(['auth', 'roles:1'])->group(function () {
   Route::post('/siswa', 'SiswaController@store')->name('siswa.store');
   Route::get('/siswa/{id}/edit', 'SiswaController@edit')->name('siswa.edit');
   Route::post('/siswa/{id}/update', 'SiswaController@update')->name('siswa.update');
-  Route::delete('/siswa/{id}', 'SiswaController@destroy')->name('siswa.destroy');
+  Route::delete('/siswa/{id}/del', 'SiswaController@destroy')->name('siswa.destroy');
 
   Route::get('/siswa/export-siswa', 'SiswaController@export')->name('siswa.export');
   Route::get('/siswa/export-siswa/{id}', 'SiswaController@exportKategori')->name('siswa.exportKategori');
@@ -61,5 +61,13 @@ Route::middleware(['auth', 'roles:1'])->group(function () {
   Route::get('/kelas/{id}/edit', 'KelasController@edit')->name('kelas.edit');
   Route::post('/kelas/{id}/update', 'KelasController@update')->name('kelas.update');
   Route::delete('/kelas/{id}', 'KelasController@destroy')->name('kelas.destroy');
+
+  Route::get('/ketpembayaran', 'KetPembayaranController@index')->name('ketpembayaran.index');
+  Route::get('/ketpembayaran/create', 'KetPembayaranController@create')->name('ketpembayaran.create');
+  Route::post('/ketpembayaran', 'KetPembayaranController@store')->name('ketpembayaran.store');
+  Route::get('/ketpembayaran/{id}/show', 'KetPembayaranController@show')->name('ketpembayaran.show');
+  Route::get('/ketpembayaran/{id}/edit', 'KetPembayaranController@edit')->name('ketpembayaran.edit');
+  Route::post('/ketpembayaran/{id}/update', 'KetPembayaranController@update')->name('ketpembayaran.update');
+  Route::delete('/ketpembayaran/{id}', 'KetPembayaranController@destroy')->name('ketpembayaran.destroy');
 
 });

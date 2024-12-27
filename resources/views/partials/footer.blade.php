@@ -1,7 +1,7 @@
 <footer class="main-footer">
     <div class="footer-left">
-        Copyright &copy; 2024 <div class="bullet"></div> Design By <a href="#"> TeknoArt Digital Movement
-            Teknologi</a>
+        Copyright &copy; 2024 <div class="bullet"></div> Design By <a href="https://technoart.id/" target="_blank"> Techno
+            Art</a>
     </div>
     <div class="footer-right">
 

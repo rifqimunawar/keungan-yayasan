@@ -77,6 +77,18 @@
                                         <input required type="text" name="nominal" id="rupiah" class="form-control"
                                             value="" onkeyup="calculateChange()">
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>Keterangan Pembayaran</label>
+                                        <select name="ketpembayaran_id" class="form-control select2" required>
+                                            <option selected disabled value="">-- pilih --</option>
+                                            @foreach ($data_ketpembayaran as $item)
+                                                <option value="{{ $item->id }}">
+                                                    {{ $item->title }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     <div class="form-group-row mt-3">
                                         <label for="">TU Keuangan</label>
                                         <p>{{ Auth::user()->name }}</p>
@@ -138,9 +150,13 @@
                                     </td> --}}
                                     <td>{{ $item->users->name }}</td>
                                     <td>
+                                        {{-- <a href="{{ route('pembayaran.invoice', $item->id) }}" class="badge badge-info"><i
+                                                class="fa fa-print" aria-hidden="true"></i>Invoice</a> --}}
+
+
                                         <a href="javascript:void(0);" class="badge badge-info"
                                             onclick="printInvoice('{{ route('pembayaran.invoice', $item->id) }}')"><i
-                                                class="fa fa-print" aria-hidden="true"></i>Invoice</a>
+                                                class="fa fa-print" aria-hidden="true"></i>&ensp;Invoice</a>
                                     </td>
                                 </tr>
                             @endforeach

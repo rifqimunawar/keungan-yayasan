@@ -77,6 +77,9 @@ class Backup extends Command
       'kelas' => [
         'kelas',
       ],
+      'ket_pembayarans' => [
+        'ket_pembayarans',
+      ],
 
     ];
     if ($opt_users == 1 || $arg_type == 'users')
