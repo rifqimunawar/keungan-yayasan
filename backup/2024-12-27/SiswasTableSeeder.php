@@ -25,12 +25,12 @@ class SiswasTableSeeder extends Seeder
                 'name' => 'Adzkia Dinnar Jaelani',
                 'nisn' => NULL,
                 'no_urut' => 124001,
-                'tahun_masuk_id' => 8,
+                'tahun_masuk_id' => 7,
                 'category_id' => 1,
                 'kelas_id' => 1,
                 'deleted_at' => NULL,
                 'created_at' => '2024-09-20 19:33:22',
-                'updated_at' => '2024-09-20 19:33:22',
+                'updated_at' => '2024-12-25 06:04:54',
             ),
             1 => 
             array (
@@ -8843,10 +8843,10 @@ class SiswasTableSeeder extends Seeder
                 'no_urut' => 324072,
                 'tahun_masuk_id' => 8,
                 'category_id' => 3,
-                'kelas_id' => 12,
+                'kelas_id' => 21,
                 'deleted_at' => NULL,
                 'created_at' => '2024-09-20 19:57:08',
-                'updated_at' => '2024-09-20 19:57:08',
+                'updated_at' => '2024-12-25 06:09:45',
             ),
             179 => 
             array (

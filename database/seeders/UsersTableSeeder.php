@@ -58,19 +58,6 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2024-08-27 23:30:53',
                 'updated_at' => '2024-08-27 23:30:53',
             ),
-            3 => 
-            array (
-                'id' => 9,
-                'name' => 'Agung Nugraha',
-                'username' => 'agung',
-                'role_id' => 1,
-                'email' => 'agung@gmail.com',
-                'email_verified_at' => NULL,
-                'password' => '$2y$12$cyLCIwhI2VShUqxrOoZ7CezSkwkATdyHNBfktS33R36HPeFVYt22.',
-                'remember_token' => NULL,
-                'created_at' => '2024-12-11 21:38:17',
-                'updated_at' => '2024-12-11 21:38:17',
-            ),
         ));
         
         

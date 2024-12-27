@@ -70,7 +70,8 @@
                                     <span id="nominalTagihan" style="display: none;">{{ $sisa_nominal ?? 0 }}</span>
                                     <div class="form-group-row mb-3">
                                         <label for="">Tanggal</label>
-                                        <input type="datetime-local" class="form-control" value="{{ $tanggal }}">
+                                        <input type="datetime-local" readonly class="form-control"
+                                            value="{{ $tanggal }}">
                                     </div>
                                     <div class="form-group-row mb-3">
                                         <label for="">Nominal Pembayaran</label>

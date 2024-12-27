@@ -22,11 +22,11 @@ class KelasTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'name' => 'Kelas I',
+                'name' => 'Kelas I Update',
                 'category_id' => 1,
                 'deleted_at' => NULL,
                 'created_at' => '2024-09-20 16:31:56',
-                'updated_at' => '2024-09-20 16:31:56',
+                'updated_at' => '2024-12-25 06:07:15',
             ),
             1 => 
             array (
@@ -180,6 +180,24 @@ class KelasTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2024-09-20 17:11:27',
                 'updated_at' => '2024-09-20 17:11:27',
+            ),
+            18 => 
+            array (
+                'id' => 20,
+                'name' => 'Alumni',
+                'category_id' => 3,
+                'deleted_at' => '2024-12-25 06:18:51',
+                'created_at' => '2024-12-25 05:56:21',
+                'updated_at' => '2024-12-25 06:18:51',
+            ),
+            19 => 
+            array (
+                'id' => 21,
+                'name' => 'XI TKJ 3 Update',
+                'category_id' => 3,
+                'deleted_at' => NULL,
+                'created_at' => '2024-12-25 06:09:16',
+                'updated_at' => '2024-12-25 06:09:16',
             ),
         ));
         

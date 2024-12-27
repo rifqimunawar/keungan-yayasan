@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
     $this->call(TagihansTableSeeder::class);
     $this->call(SiswaTagihanTableSeeder::class);
     $this->call(HistoriesTableSeeder::class);
-  }
+      $this->call(KetPembayaransTableSeeder::class);
+    }
 }
