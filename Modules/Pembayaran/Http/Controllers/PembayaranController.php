@@ -2,17 +2,20 @@
 
 namespace Modules\Pembayaran\Http\Controllers;
 
+use CURLFile;
+use Mpdf\Mpdf;
+use App\Helpers\Fungsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Modules\History\Entities\History;
-use Modules\MasterData\Entities\KetPembayaran;
 use Modules\MasterData\Entities\Siswa;
 use Modules\MasterData\Entities\Tagihan;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Contracts\Support\Renderable;
+use Modules\MasterData\Entities\KetPembayaran;
 
 class PembayaranController extends Controller
 {
@@ -146,6 +149,8 @@ class PembayaranController extends Controller
 
     $history->save();
 
+    $id_history = $history->id;
+
     $siswa_tagihan_id = $request->siswa_tagihan_id;
     $siswa_id = $request->siswa_id;
     $tagihan_id = $request->tagihan_id;
@@ -169,10 +174,94 @@ class PembayaranController extends Controller
       Alert::error('Oops...', 'Transaksi gagal');
       return redirect()->route('pembayaran.make', [$siswa_tagihan_id, $siswa_id]);
     }
-
-    Alert::success('Success', 'Data berhasil disimpan');
-    return redirect()->route('pembayaran.make', [$siswa_tagihan_id, $siswa_id]);
+    return redirect()->route('pembayaran.pdf', ['id' => $id_history]);
   }
+  public function pdf($id)
+  {
+    $logo = "https://armaniyyah.technoart.id/assets/img/logo-arman.png";
+    $history = History::findOrFail($id);
+    $data = History::with([
+      'siswa.tagihans' => function ($query) use ($history) {
+        $query->where('tagihan_id', $history->tagihan_id);
+      },
+      'users'
+    ])->findOrFail($id);
+    $data->tanggal_transaksi = Carbon::parse($data->tanggal_transaksi);
+    $title = $data->siswa->name . '_' . $id;
+    $telp = $data->siswa->telp;
+
+    // dd($data->siswa->tagihans->first()->name);
+
+    $html = view('pembayaran::pembayaran.pdf', [
+      'title' => $title,
+      'data' => $data,
+      'logo' => $logo,
+    ])->render();
+
+    $mpdf = new Mpdf([
+      'tempDir' => storage_path('app/mpdf'),
+      'allow_output_buffering' => true,
+      'format' => 'A4',
+      'margin_top' => 10,
+      'margin_bottom' => 10,
+    ]);
+
+    try {
+      $mpdf->WriteHTML($html);
+      $titleExtension = str_replace(' ', '_', $title) . '.pdf';
+      $filePath = public_path('assets/pdf/' . $titleExtension);
+      $mpdf->Output($filePath, 'F');
+
+      if (!empty($telp) && strlen($telp) >= 9) {
+        $token = env('WHATSAPP_TOKEN');
+        $pdf = env('BASE_URL') . 'assets/pdf/' . $titleExtension;
+        $idnTelp = '+62' . $telp;
+        $message =
+          "Dengan hormat, kami informasikan bahwa anak Bapak/Ibu, {$data->siswa->name}, telah melakukan pembayaran {$data->siswa->tagihans->first()->name} sebesar " . Fungsi::rupiah($data->nominal) . ". Pembayaran telah tercatat dengan baik pada sistem kami pada tanggal {$data->tanggal_transaksi}.
+
+          Nota pembayaran dapat diakses melalui link di bawah ini:
+          {$pdf}
+
+          Terima kasih atas perhatian dan kerjasama Bapak/Ibu. Jika ada pertanyaan lebih lanjut, silakan menghubungi kami.";
+        $target = $idnTelp;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => env('WHATSAPP_URL'),
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'POST',
+          CURLOPT_POSTFIELDS => array(
+            'target' => $target,
+            'message' => $message,
+          ),
+          CURLOPT_HTTPHEADER => array(
+            "Authorization: $token",
+          ),
+        ));
+
+        $response = curl_exec($curl);
+        if (curl_errno($curl)) {
+          $error_msg = curl_error($curl);
+        }
+        curl_close($curl);
+      }
+      Alert::success('Success', 'Data berhasil disimpan');
+      return redirect()->route('pembayaran.make', [$data->siswa_tagihan_id, $data->siswa_id]);
+
+      // $mpdf->WriteHTML($html);
+      // $fileName = str_replace(' ', '_', $title) . '.pdf';
+      // $mpdf->Output($fileName, 'D'); // Download file
+      // $mpdf->Output($fileName, 'I'); // View File
+    } catch (\Mpdf\MpdfException $e) {
+      return response()->json(['error' => $e->getMessage()], 500);
+    }
+  }
+
   public function invoice($id)
   {
     $title = 'Data Siswa';

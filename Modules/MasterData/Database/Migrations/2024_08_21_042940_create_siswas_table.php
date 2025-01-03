@@ -16,6 +16,7 @@ return new class extends Migration {
       $table->id();
       $table->string('name');
       $table->unsignedBigInteger('nisn')->nullable();
+      $table->unsignedBigInteger('telp')->nullable();
       $table->unsignedBigInteger('no_urut')->nullable();
       $table->unsignedBigInteger('tahun_masuk_id')->default(1);
       $table->unsignedBigInteger('category_id')->default(1);

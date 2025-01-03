@@ -91,6 +91,7 @@ class SiswaController extends Controller
     $newData = Siswa::create([
       'name' => $request->input('name'),
       'nisn' => $request->input('nisn'),
+      'telp' => $request->input('telp'),
       'no_urut' => $request->input('no_urut'),
       'tahun_masuk_id' => $request->input('tahun_masuk_id'),
       'category_id' => $category_id,
@@ -162,6 +163,7 @@ class SiswaController extends Controller
     $updateData->update([
       'name' => $request->input('name'),
       'nisn' => $request->input('nisn'),
+      'telp' => $request->input('telp'),
       'no_urut' => $request->input('no_urut'),
       'tahun_masuk_id' => $request->input('tahun_masuk_id'),
       'category_id' => $category_id,

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'voku\\' => array($vendorDir . '/voku/portable-ascii/src/voku'),
+    'setasign\\Fpdi\\' => array($vendorDir . '/setasign/fpdi/src'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
     'Yajra\\DataTables\\' => array($vendorDir . '/yajra/laravel-datatables-buttons/src', $vendorDir . '/yajra/laravel-datatables-editor/src', $vendorDir . '/yajra/laravel-datatables-export/src', $vendorDir . '/yajra/laravel-datatables-fractal/src', $vendorDir . '/yajra/laravel-datatables-html/src', $vendorDir . '/yajra/laravel-datatables-oracle/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
@@ -64,6 +65,9 @@ return array(
     'OpenSpout\\' => array($vendorDir . '/openspout/openspout/src'),
     'Nwidart\\Modules\\' => array($vendorDir . '/nwidart/laravel-modules/src'),
     'NunoMaduro\\Collision\\' => array($vendorDir . '/nunomaduro/collision/src'),
+    'Mpdf\\PsrLogAwareTrait\\' => array($vendorDir . '/mpdf/psr-log-aware-trait/src'),
+    'Mpdf\\PsrHttpMessageShim\\' => array($vendorDir . '/mpdf/psr-http-message-shim/src'),
+    'Mpdf\\' => array($vendorDir . '/mpdf/mpdf/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Modules\\' => array($baseDir . '/Modules'),
     'Mockery\\' => array($vendorDir . '/mockery/mockery/library/Mockery'),

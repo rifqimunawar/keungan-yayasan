@@ -59,33 +59,11 @@ class SiswaTagihanTableSeeder extends Seeder
                 'tagihan_id' => 7,
                 'status' => 0,
                 'nominal_tagihan' => 0,
-                'nominal_tagihan_terbayar' => 0,
+                'nominal_tagihan_terbayar' => 200000,
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
             4 => 
-            array (
-                'id' => 525,
-                'siswa_id' => 702,
-                'tagihan_id' => 7,
-                'status' => 0,
-                'nominal_tagihan' => 0,
-                'nominal_tagihan_terbayar' => 0,
-                'created_at' => '2024-12-27 14:58:39',
-                'updated_at' => '2024-12-27 14:58:39',
-            ),
-            5 => 
-            array (
-                'id' => 526,
-                'siswa_id' => 703,
-                'tagihan_id' => 7,
-                'status' => 0,
-                'nominal_tagihan' => 0,
-                'nominal_tagihan_terbayar' => 250000,
-                'created_at' => '2024-12-27 14:58:39',
-                'updated_at' => '2024-12-27 14:58:39',
-            ),
-            6 => 
             array (
                 'id' => 527,
                 'siswa_id' => 704,
@@ -96,18 +74,18 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            7 => 
+            5 => 
             array (
                 'id' => 528,
                 'siswa_id' => 705,
                 'tagihan_id' => 7,
                 'status' => 0,
                 'nominal_tagihan' => 0,
-                'nominal_tagihan_terbayar' => 0,
+                'nominal_tagihan_terbayar' => 200000,
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            8 => 
+            6 => 
             array (
                 'id' => 529,
                 'siswa_id' => 706,
@@ -118,7 +96,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            9 => 
+            7 => 
             array (
                 'id' => 530,
                 'siswa_id' => 707,
@@ -129,7 +107,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            10 => 
+            8 => 
             array (
                 'id' => 531,
                 'siswa_id' => 708,
@@ -140,7 +118,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            11 => 
+            9 => 
             array (
                 'id' => 532,
                 'siswa_id' => 709,
@@ -151,18 +129,18 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            12 => 
+            10 => 
             array (
                 'id' => 533,
                 'siswa_id' => 710,
                 'tagihan_id' => 7,
                 'status' => 0,
                 'nominal_tagihan' => 0,
-                'nominal_tagihan_terbayar' => 0,
+                'nominal_tagihan_terbayar' => 100000,
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            13 => 
+            11 => 
             array (
                 'id' => 534,
                 'siswa_id' => 711,
@@ -173,7 +151,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            14 => 
+            12 => 
             array (
                 'id' => 535,
                 'siswa_id' => 712,
@@ -184,7 +162,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            15 => 
+            13 => 
             array (
                 'id' => 536,
                 'siswa_id' => 713,
@@ -195,7 +173,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            16 => 
+            14 => 
             array (
                 'id' => 537,
                 'siswa_id' => 714,
@@ -206,7 +184,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            17 => 
+            15 => 
             array (
                 'id' => 538,
                 'siswa_id' => 715,
@@ -217,7 +195,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            18 => 
+            16 => 
             array (
                 'id' => 539,
                 'siswa_id' => 716,
@@ -228,7 +206,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            19 => 
+            17 => 
             array (
                 'id' => 540,
                 'siswa_id' => 717,
@@ -239,7 +217,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            20 => 
+            18 => 
             array (
                 'id' => 541,
                 'siswa_id' => 718,
@@ -250,7 +228,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            21 => 
+            19 => 
             array (
                 'id' => 542,
                 'siswa_id' => 719,
@@ -261,7 +239,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            22 => 
+            20 => 
             array (
                 'id' => 543,
                 'siswa_id' => 720,
@@ -272,7 +250,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            23 => 
+            21 => 
             array (
                 'id' => 544,
                 'siswa_id' => 721,
@@ -283,7 +261,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            24 => 
+            22 => 
             array (
                 'id' => 545,
                 'siswa_id' => 722,
@@ -294,7 +272,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            25 => 
+            23 => 
             array (
                 'id' => 546,
                 'siswa_id' => 723,
@@ -305,7 +283,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            26 => 
+            24 => 
             array (
                 'id' => 547,
                 'siswa_id' => 724,
@@ -316,7 +294,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            27 => 
+            25 => 
             array (
                 'id' => 548,
                 'siswa_id' => 725,
@@ -327,7 +305,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            28 => 
+            26 => 
             array (
                 'id' => 549,
                 'siswa_id' => 726,
@@ -338,7 +316,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            29 => 
+            27 => 
             array (
                 'id' => 550,
                 'siswa_id' => 727,
@@ -349,7 +327,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            30 => 
+            28 => 
             array (
                 'id' => 551,
                 'siswa_id' => 728,
@@ -360,7 +338,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            31 => 
+            29 => 
             array (
                 'id' => 552,
                 'siswa_id' => 729,
@@ -371,7 +349,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            32 => 
+            30 => 
             array (
                 'id' => 553,
                 'siswa_id' => 730,
@@ -382,7 +360,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            33 => 
+            31 => 
             array (
                 'id' => 554,
                 'siswa_id' => 731,
@@ -393,7 +371,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            34 => 
+            32 => 
             array (
                 'id' => 555,
                 'siswa_id' => 732,
@@ -404,7 +382,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            35 => 
+            33 => 
             array (
                 'id' => 556,
                 'siswa_id' => 733,
@@ -415,7 +393,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            36 => 
+            34 => 
             array (
                 'id' => 557,
                 'siswa_id' => 734,
@@ -426,7 +404,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            37 => 
+            35 => 
             array (
                 'id' => 558,
                 'siswa_id' => 735,
@@ -437,7 +415,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            38 => 
+            36 => 
             array (
                 'id' => 559,
                 'siswa_id' => 736,
@@ -448,7 +426,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            39 => 
+            37 => 
             array (
                 'id' => 560,
                 'siswa_id' => 737,
@@ -459,7 +437,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            40 => 
+            38 => 
             array (
                 'id' => 561,
                 'siswa_id' => 738,
@@ -470,7 +448,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            41 => 
+            39 => 
             array (
                 'id' => 562,
                 'siswa_id' => 739,
@@ -481,7 +459,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            42 => 
+            40 => 
             array (
                 'id' => 563,
                 'siswa_id' => 740,
@@ -492,7 +470,7 @@ class SiswaTagihanTableSeeder extends Seeder
                 'created_at' => '2024-12-27 14:58:39',
                 'updated_at' => '2024-12-27 14:58:39',
             ),
-            43 => 
+            41 => 
             array (
                 'id' => 564,
                 'siswa_id' => 699,
@@ -502,6 +480,1348 @@ class SiswaTagihanTableSeeder extends Seeder
                 'nominal_tagihan_terbayar' => 0,
                 'created_at' => '2024-12-27 15:03:21',
                 'updated_at' => '2024-12-27 15:03:21',
+            ),
+            42 => 
+            array (
+                'id' => 565,
+                'siswa_id' => 2,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            43 => 
+            array (
+                'id' => 566,
+                'siswa_id' => 3,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            44 => 
+            array (
+                'id' => 567,
+                'siswa_id' => 4,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            45 => 
+            array (
+                'id' => 568,
+                'siswa_id' => 5,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            46 => 
+            array (
+                'id' => 569,
+                'siswa_id' => 6,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            47 => 
+            array (
+                'id' => 570,
+                'siswa_id' => 7,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            48 => 
+            array (
+                'id' => 571,
+                'siswa_id' => 8,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            49 => 
+            array (
+                'id' => 572,
+                'siswa_id' => 9,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            50 => 
+            array (
+                'id' => 573,
+                'siswa_id' => 10,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            51 => 
+            array (
+                'id' => 574,
+                'siswa_id' => 11,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            52 => 
+            array (
+                'id' => 575,
+                'siswa_id' => 12,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            53 => 
+            array (
+                'id' => 576,
+                'siswa_id' => 13,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            54 => 
+            array (
+                'id' => 577,
+                'siswa_id' => 14,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            55 => 
+            array (
+                'id' => 578,
+                'siswa_id' => 15,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            56 => 
+            array (
+                'id' => 579,
+                'siswa_id' => 16,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            57 => 
+            array (
+                'id' => 580,
+                'siswa_id' => 17,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            58 => 
+            array (
+                'id' => 581,
+                'siswa_id' => 18,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            59 => 
+            array (
+                'id' => 582,
+                'siswa_id' => 19,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            60 => 
+            array (
+                'id' => 583,
+                'siswa_id' => 20,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            61 => 
+            array (
+                'id' => 584,
+                'siswa_id' => 21,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            62 => 
+            array (
+                'id' => 585,
+                'siswa_id' => 22,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            63 => 
+            array (
+                'id' => 586,
+                'siswa_id' => 23,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            64 => 
+            array (
+                'id' => 587,
+                'siswa_id' => 24,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            65 => 
+            array (
+                'id' => 588,
+                'siswa_id' => 25,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            66 => 
+            array (
+                'id' => 589,
+                'siswa_id' => 26,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            67 => 
+            array (
+                'id' => 590,
+                'siswa_id' => 27,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            68 => 
+            array (
+                'id' => 591,
+                'siswa_id' => 28,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            69 => 
+            array (
+                'id' => 592,
+                'siswa_id' => 29,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            70 => 
+            array (
+                'id' => 593,
+                'siswa_id' => 30,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            71 => 
+            array (
+                'id' => 594,
+                'siswa_id' => 31,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            72 => 
+            array (
+                'id' => 595,
+                'siswa_id' => 32,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            73 => 
+            array (
+                'id' => 596,
+                'siswa_id' => 33,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            74 => 
+            array (
+                'id' => 597,
+                'siswa_id' => 34,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            75 => 
+            array (
+                'id' => 598,
+                'siswa_id' => 35,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            76 => 
+            array (
+                'id' => 599,
+                'siswa_id' => 36,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            77 => 
+            array (
+                'id' => 600,
+                'siswa_id' => 37,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            78 => 
+            array (
+                'id' => 601,
+                'siswa_id' => 38,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            79 => 
+            array (
+                'id' => 602,
+                'siswa_id' => 39,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            80 => 
+            array (
+                'id' => 603,
+                'siswa_id' => 40,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            81 => 
+            array (
+                'id' => 604,
+                'siswa_id' => 41,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            82 => 
+            array (
+                'id' => 605,
+                'siswa_id' => 42,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            83 => 
+            array (
+                'id' => 606,
+                'siswa_id' => 43,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            84 => 
+            array (
+                'id' => 607,
+                'siswa_id' => 44,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            85 => 
+            array (
+                'id' => 608,
+                'siswa_id' => 45,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            86 => 
+            array (
+                'id' => 609,
+                'siswa_id' => 46,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            87 => 
+            array (
+                'id' => 610,
+                'siswa_id' => 47,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            88 => 
+            array (
+                'id' => 611,
+                'siswa_id' => 48,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            89 => 
+            array (
+                'id' => 612,
+                'siswa_id' => 49,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            90 => 
+            array (
+                'id' => 613,
+                'siswa_id' => 50,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            91 => 
+            array (
+                'id' => 614,
+                'siswa_id' => 51,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            92 => 
+            array (
+                'id' => 615,
+                'siswa_id' => 52,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            93 => 
+            array (
+                'id' => 616,
+                'siswa_id' => 53,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            94 => 
+            array (
+                'id' => 617,
+                'siswa_id' => 54,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            95 => 
+            array (
+                'id' => 618,
+                'siswa_id' => 55,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            96 => 
+            array (
+                'id' => 619,
+                'siswa_id' => 56,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            97 => 
+            array (
+                'id' => 620,
+                'siswa_id' => 57,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            98 => 
+            array (
+                'id' => 621,
+                'siswa_id' => 58,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            99 => 
+            array (
+                'id' => 622,
+                'siswa_id' => 59,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            100 => 
+            array (
+                'id' => 623,
+                'siswa_id' => 60,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            101 => 
+            array (
+                'id' => 624,
+                'siswa_id' => 61,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            102 => 
+            array (
+                'id' => 625,
+                'siswa_id' => 62,
+                'tagihan_id' => 10,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:21:44',
+                'updated_at' => '2025-01-04 03:21:44',
+            ),
+            103 => 
+            array (
+                'id' => 626,
+                'siswa_id' => 2,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 45000,
+                'created_at' => '2025-01-04 03:24:03',
+                'updated_at' => '2025-01-04 03:24:03',
+            ),
+            104 => 
+            array (
+                'id' => 627,
+                'siswa_id' => 3,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            105 => 
+            array (
+                'id' => 628,
+                'siswa_id' => 4,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            106 => 
+            array (
+                'id' => 629,
+                'siswa_id' => 5,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            107 => 
+            array (
+                'id' => 630,
+                'siswa_id' => 6,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            108 => 
+            array (
+                'id' => 631,
+                'siswa_id' => 7,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            109 => 
+            array (
+                'id' => 632,
+                'siswa_id' => 8,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            110 => 
+            array (
+                'id' => 633,
+                'siswa_id' => 9,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            111 => 
+            array (
+                'id' => 634,
+                'siswa_id' => 10,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            112 => 
+            array (
+                'id' => 635,
+                'siswa_id' => 11,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            113 => 
+            array (
+                'id' => 636,
+                'siswa_id' => 12,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            114 => 
+            array (
+                'id' => 637,
+                'siswa_id' => 13,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            115 => 
+            array (
+                'id' => 638,
+                'siswa_id' => 14,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            116 => 
+            array (
+                'id' => 639,
+                'siswa_id' => 15,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            117 => 
+            array (
+                'id' => 640,
+                'siswa_id' => 16,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            118 => 
+            array (
+                'id' => 641,
+                'siswa_id' => 17,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            119 => 
+            array (
+                'id' => 642,
+                'siswa_id' => 18,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            120 => 
+            array (
+                'id' => 643,
+                'siswa_id' => 19,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            121 => 
+            array (
+                'id' => 644,
+                'siswa_id' => 20,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            122 => 
+            array (
+                'id' => 645,
+                'siswa_id' => 21,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            123 => 
+            array (
+                'id' => 646,
+                'siswa_id' => 22,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            124 => 
+            array (
+                'id' => 647,
+                'siswa_id' => 23,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            125 => 
+            array (
+                'id' => 648,
+                'siswa_id' => 24,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            126 => 
+            array (
+                'id' => 649,
+                'siswa_id' => 25,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            127 => 
+            array (
+                'id' => 650,
+                'siswa_id' => 26,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            128 => 
+            array (
+                'id' => 651,
+                'siswa_id' => 27,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            129 => 
+            array (
+                'id' => 652,
+                'siswa_id' => 28,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            130 => 
+            array (
+                'id' => 653,
+                'siswa_id' => 29,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            131 => 
+            array (
+                'id' => 654,
+                'siswa_id' => 30,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            132 => 
+            array (
+                'id' => 655,
+                'siswa_id' => 31,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            133 => 
+            array (
+                'id' => 656,
+                'siswa_id' => 32,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            134 => 
+            array (
+                'id' => 657,
+                'siswa_id' => 33,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            135 => 
+            array (
+                'id' => 658,
+                'siswa_id' => 34,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            136 => 
+            array (
+                'id' => 659,
+                'siswa_id' => 35,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            137 => 
+            array (
+                'id' => 660,
+                'siswa_id' => 36,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            138 => 
+            array (
+                'id' => 661,
+                'siswa_id' => 37,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            139 => 
+            array (
+                'id' => 662,
+                'siswa_id' => 38,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            140 => 
+            array (
+                'id' => 663,
+                'siswa_id' => 39,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            141 => 
+            array (
+                'id' => 664,
+                'siswa_id' => 40,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            142 => 
+            array (
+                'id' => 665,
+                'siswa_id' => 41,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            143 => 
+            array (
+                'id' => 666,
+                'siswa_id' => 42,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            144 => 
+            array (
+                'id' => 667,
+                'siswa_id' => 43,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            145 => 
+            array (
+                'id' => 668,
+                'siswa_id' => 44,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            146 => 
+            array (
+                'id' => 669,
+                'siswa_id' => 45,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            147 => 
+            array (
+                'id' => 670,
+                'siswa_id' => 46,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            148 => 
+            array (
+                'id' => 671,
+                'siswa_id' => 47,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            149 => 
+            array (
+                'id' => 672,
+                'siswa_id' => 48,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            150 => 
+            array (
+                'id' => 673,
+                'siswa_id' => 49,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            151 => 
+            array (
+                'id' => 674,
+                'siswa_id' => 50,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            152 => 
+            array (
+                'id' => 675,
+                'siswa_id' => 51,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            153 => 
+            array (
+                'id' => 676,
+                'siswa_id' => 52,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            154 => 
+            array (
+                'id' => 677,
+                'siswa_id' => 53,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            155 => 
+            array (
+                'id' => 678,
+                'siswa_id' => 54,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            156 => 
+            array (
+                'id' => 679,
+                'siswa_id' => 55,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            157 => 
+            array (
+                'id' => 680,
+                'siswa_id' => 56,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            158 => 
+            array (
+                'id' => 681,
+                'siswa_id' => 57,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            159 => 
+            array (
+                'id' => 682,
+                'siswa_id' => 58,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            160 => 
+            array (
+                'id' => 683,
+                'siswa_id' => 59,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            161 => 
+            array (
+                'id' => 684,
+                'siswa_id' => 60,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            162 => 
+            array (
+                'id' => 685,
+                'siswa_id' => 61,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
+            ),
+            163 => 
+            array (
+                'id' => 686,
+                'siswa_id' => 62,
+                'tagihan_id' => 11,
+                'status' => 0,
+                'nominal_tagihan' => 0,
+                'nominal_tagihan_terbayar' => 0,
+                'created_at' => '2025-01-04 03:24:20',
+                'updated_at' => '2025-01-04 03:24:20',
             ),
         ));
         

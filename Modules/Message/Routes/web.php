@@ -16,4 +16,5 @@ Route::prefix('message')->group(function () {
   // Route::get('/', [MessageController::class, 'index'])->name('message.index');
   Route::get('/create', [MessageController::class, 'create'])->name('message.create');
   Route::post('/store', [MessageController::class, 'store'])->name('message.store');
+  Route::post('/storePengumuman', [MessageController::class, 'storePengumuman'])->name('message.storePengumuman');
 });

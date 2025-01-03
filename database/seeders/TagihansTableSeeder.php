@@ -49,6 +49,26 @@ class TagihansTableSeeder extends Seeder
                 'created_at' => '2024-12-27 15:03:12',
                 'updated_at' => '2024-12-27 15:03:12',
             ),
+            3 => 
+            array (
+                'id' => 10,
+                'name' => 'SPP Januari 2025',
+                'nominal' => 200000,
+                'category_id' => 1,
+                'deleted_at' => NULL,
+                'created_at' => '2025-01-04 03:21:35',
+                'updated_at' => '2025-01-04 03:21:35',
+            ),
+            4 => 
+            array (
+                'id' => 11,
+                'name' => 'SPP SD Februari',
+                'nominal' => 250000,
+                'category_id' => 1,
+                'deleted_at' => NULL,
+                'created_at' => '2025-01-04 03:23:53',
+                'updated_at' => '2025-01-04 03:23:53',
+            ),
         ));
         
         

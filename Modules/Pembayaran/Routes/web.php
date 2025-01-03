@@ -28,6 +28,7 @@ Route::middleware(['auth', 'roles:1,2'])->group(function () {
   Route::get('/pembayaran/{id}/{siswa_id}/make', 'PembayaranController@make')->name('pembayaran.make');
   Route::post('/pembayaran/{id}/save', 'PembayaranController@savePembayaran')->name('pembayaran.save');
   Route::get('/pembayaran/{id}/invoice', 'PembayaranController@invoice')->name('pembayaran.invoice');
+  Route::get('/pembayaran/{id}/pdf', 'PembayaranController@pdf')->name('pembayaran.pdf');
 
   // Route::get('/tagihan/lunas/{siswaId}/{tagihanId}', 'PembayaranController@lunas');
 
