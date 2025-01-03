@@ -23,7 +23,7 @@ Route::middleware(['auth', 'roles:1,2'])->group(function () {
   Route::get('/pembayaran/{id}/edit', 'PembayaranController@edit')->name('pembayaran.edit');
   Route::get('/pembayaran/{id}/show', 'PembayaranController@show')->name('pembayaran.show');
   Route::post('/pembayaran/{id}/update', 'PembayaranController@update')->name('pembayaran.update');
-  Route::delete('/pembayaran/{id}', 'PembayaranController@destroy')->name('pembayaran.destroy');
+  Route::delete('/pembayaran/{id}/{siswa_id}', 'PembayaranController@destroyTagihan')->name('pembayaran.destroy');
 
   Route::get('/pembayaran/{id}/{siswa_id}/make', 'PembayaranController@make')->name('pembayaran.make');
   Route::post('/pembayaran/{id}/save', 'PembayaranController@savePembayaran')->name('pembayaran.save');

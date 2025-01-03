@@ -127,12 +127,12 @@
                                                 <td>{{ \Carbon\Carbon::parse($item->tanggal_transaksi)->translatedFormat('d F Y') }}
                                                 </td>
                                                 <td class="text-center">
-                                                    {{-- <a href="javascript:void(0);" class="badge badge-info"
+                                                    <a href="javascript:void(0);" class="badge badge-info"
                                                         onclick="printInvoice('{{ route('pembayaran.invoice', $item->id) }}')"><i
-                                                            class="fa fa-print" aria-hidden="true"></i>&ensp;Invoice</a> --}}
-                                                    <a href="{{ route('pembayaran.invoice', $item->id) }}"
+                                                            class="fa fa-print" aria-hidden="true"></i>&ensp;Invoice</a>
+                                                    {{-- <a href="{{ route('pembayaran.invoice', $item->id) }}"
                                                         class="badge badge-info"><i class="fa fa-print"
-                                                            aria-hidden="true"></i>Invoice</a>
+                                                            aria-hidden="true"></i>Invoice</a> --}}
                                                 </td>
                                             </tr>
                                         @endforeach

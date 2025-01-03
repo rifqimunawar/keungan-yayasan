@@ -41,15 +41,30 @@ class PembayaranController extends Controller
     $tagihan = $siswa->tagihans;
 
     $alert = 'Anda Yakin!';
-    $text = "Siswa tersebut sudah melunasi pembayaran?";
+    $text = "Tagihan akan dihapus?";
     confirmDelete($alert, $text);
 
-    // dd($tagihan);
     return view('pembayaran::pembayaran.show', [
       'tagihan' => $tagihan,
       'siswa' => $siswa,
       'title' => $title
     ]);
+  }
+  public function destroyTagihan($id, $siswa_id)
+  {
+    $data = Siswa::with([
+      'tagihans' => function ($query) use ($id) {
+        $query->where('siswa_tagihan.id', $id);
+      }
+    ])->findOrFail($siswa_id);
+
+    if ($data->tagihans->isNotEmpty()) {
+      $data->tagihans()->wherePivot('id', $id)->detach();
+      Alert::success('Success', 'Data berhasil dihapus');
+    } else {
+      Alert::error('Error', 'Data tidak ditemukan');
+    }
+    return redirect()->route('pembayaran.show', $siswa_id);
   }
   public function lunas($tagihanId, $siswaId)
   {
