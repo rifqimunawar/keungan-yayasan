@@ -117,62 +117,6 @@ class HistoriesTableSeeder extends Seeder
                 'created_at' => '2025-01-04 04:18:35',
                 'updated_at' => '2025-01-04 04:18:35',
             ),
-            7 => 
-            array (
-                'id' => 8,
-                'nominal' => 100000,
-                'tanggal_transaksi' => '2025-01-04 16:08:41',
-                'siswa_id' => 28,
-                'tagihan_id' => 10,
-                'siswa_tagihan_id' => 591,
-                'user_id' => 1,
-                'ketpembayaran_id' => 6,
-                'deleted_at' => NULL,
-                'created_at' => '2025-01-04 16:08:41',
-                'updated_at' => '2025-01-04 16:08:41',
-            ),
-            8 => 
-            array (
-                'id' => 9,
-                'nominal' => 90000,
-                'tanggal_transaksi' => '2025-01-04 16:10:01',
-                'siswa_id' => 28,
-                'tagihan_id' => 10,
-                'siswa_tagihan_id' => 591,
-                'user_id' => 1,
-                'ketpembayaran_id' => 6,
-                'deleted_at' => NULL,
-                'created_at' => '2025-01-04 16:10:01',
-                'updated_at' => '2025-01-04 16:10:01',
-            ),
-            9 => 
-            array (
-                'id' => 10,
-                'nominal' => 100000,
-                'tanggal_transaksi' => '2025-01-04 16:12:15',
-                'siswa_id' => 54,
-                'tagihan_id' => 10,
-                'siswa_tagihan_id' => 617,
-                'user_id' => 1,
-                'ketpembayaran_id' => 6,
-                'deleted_at' => NULL,
-                'created_at' => '2025-01-04 16:12:15',
-                'updated_at' => '2025-01-04 16:12:15',
-            ),
-            10 => 
-            array (
-                'id' => 11,
-                'nominal' => 200000,
-                'tanggal_transaksi' => '2025-01-05 01:45:03',
-                'siswa_id' => 6,
-                'tagihan_id' => 10,
-                'siswa_tagihan_id' => 569,
-                'user_id' => 1,
-                'ketpembayaran_id' => 6,
-                'deleted_at' => NULL,
-                'created_at' => '2025-01-05 01:45:03',
-                'updated_at' => '2025-01-05 01:45:03',
-            ),
         ));
         
         
